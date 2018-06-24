@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve",
     "build": "npm run lint && vue-cli-service build",
     "lint": "vue-cli-service lint",
-	"deploy:stage": "scp -r ./dist root@${GC_BOX}:~/stage.gradeycullins.com/",
+	  "deploy:stage": "scp -r ./dist root@${GC_BOX}:~/stage.gradeycullins.com/"
   },
   "dependencies": {
     "register-service-worker": "^1.0.0",
