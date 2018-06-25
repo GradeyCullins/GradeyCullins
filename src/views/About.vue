@@ -76,7 +76,23 @@
             </section>
 
             <section>
-              <h4>cryptocurrency</h4>
+              <div>
+                <h4 id="crypto-header">cryptocurrency</h4>
+                <span class="coin-price">
+                  <img class="coin-img" src="/img/btc.png">
+                  <!-- <span v-if="btc">${{btc.quotes.USD.price}}</span> -->
+                  <!-- <span v-if="btc">${{btcPrice}}</span> -->
+                  <span v-if="btc">${{roundedCoinPrice(btc.quotes.USD.price)}}</span>
+                </span>
+                <span class="coin-price">
+                  <img class="coin-img" src="/img/xmr.png">
+                  <span v-if="xmr">${{roundedCoinPrice(xmr.quotes.USD.price)}}</span>
+                </span>
+                <span class="coin-price">
+                  <img class="coin-img" src="/img/req.png">
+                  <span v-if="req">${{roundedCoinPrice(req.quotes.USD.price)}}</span>
+                </span>
+              </div>
               <p>
                 As a college student, my options are somewhat limited in terms of financial investments. One investment
                 that I believe in firmly is cryptocurrency. Which coin might you ask? Currently I'm holding
@@ -108,6 +124,64 @@
   </div>
 </template>
 
+<script>
+const axios = require('axios')
+
+export default {
+  name: 'About',
+  data () {
+    return {
+      btc: null,
+      xmr: null,
+      req: null
+    }
+  },
+  created () {
+    const btcProm = this.getCoinData(1)
+    const xmrProm = this.getCoinData(328)
+    const reqProm = this.getCoinData(2071)
+
+    // Wait for all the coin async loads to complete
+    Promise.all([btcProm, xmrProm, reqProm]).then(coinRes => {
+      for (const coin of coinRes) {
+        switch (coin.data.symbol) {
+          case 'BTC':
+            this.btc = coin.data
+            break
+          case 'XMR':
+            this.xmr = coin.data
+            break
+          case 'REQ':
+            this.req = coin.data
+            break
+        }
+      }
+    })
+  },
+  methods: {
+    getCoinData: async function (id) {
+      try {
+        const res = await axios.get(`https://api.coinmarketcap.com/v2/ticker/${id}/`)
+        return {
+          err: null,
+          data: res.data.data
+        }
+      } catch (err) {
+        console.log(err)
+        return {
+          err: err,
+          data: null
+        }
+      }
+    },
+    roundedCoinPrice (price) {
+      return Math.round(price * 100) / 100
+    }
+  }
+}
+
+</script>
+
 <style scoped>
 .content-sec {
   margin-bottom: 3em;
@@ -115,5 +189,19 @@
 
 .content-sub {
   text-decoration: underline;
+}
+
+#crypto-header {
+  display: inline-block;
+  margin-right: 2em;
+}
+
+.coin-price {
+  margin-right: 1em;
+}
+
+.coin-img {
+  height: 1.5em;
+  margin-right: 0.5em;
 }
 </style>
