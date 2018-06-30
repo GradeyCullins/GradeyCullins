@@ -1,7 +1,7 @@
 <template>
   <div id="left_column">
       <div id="about">
-        <!-- bio -->
+        <!-- Introduction -->
         <article id="bio">
           <section class="content-sec">
            <h2 class="content-sub">introduction</h2>
@@ -18,11 +18,75 @@
            <p>Some of my interests include: cryptocurrencies, computer networking, computer games, fitness, and world events.</p>
            <p>
              Something that hooked me into web programming and computer networking is the story of Ross Ulbricht, the
-             inventor of the Silk Road. I highly recommend reading Wired's writeup on
-           <a target="_blank" href="https://www.wired.com/2015/04/silk-road-1/">his story</a> if you want to learn more.
+             inventor of the Silk Road. I highly recommend reading Wired's
+           <a target="_blank" href="https://www.wired.com/2015/04/silk-road-1/">writeup</a> on his story if you want to learn more.
            </p>
           </section>
 
+          <!-- Talk about recent projects I've worked on or contributed to. -->
+          <section class="content-sec">
+            <h2 class="content-sub">projects</h2>
+            <section>
+              To see some of the projects I've worked on, please visit my
+              <a href="https://github.com/GradeyCullins" target="_blank">Github</a>.
+              <p>Below are some of the projects I've worked on recently:</p>
+              <ul>
+                <li>
+                  <p>
+                    My senior capstone project called
+                    <a href="https://uofu-skybin.github.io/index.html" target="_blank">Skybin</a>,
+                    a peer-to-peer file storage system
+                  </p>
+                  <ul>
+                    <li>I worked on the <a href="https://github.com/uofu-skybin/skybin-portal" target="_blank">front-end</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://github.com/GradeyCullins/GradeyCullins" target="_blank">This website</a>
+                </li>
+                <li>
+                  A multi-threaded
+                  <a href="https://github.com/GradeyCullins/QT-Server" target="_blank">web server</a>
+                  in c++
+                </li>
+              </ul>
+            </section>
+          </section>
+
+          <section class="content-sec">
+            <h2 class="content-sub">skillz</h2>
+            <p>
+              While my current professional work primarily consists of working on
+              <a href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank">SPAs</a>,
+              I consider my skillset to reach beyond
+              the hectic domain of web development.
+            </p>
+            <p>
+              I have years of experience developing in macOS, GNU/Linux, and Windows operating systems, with
+              a strong preference for working in unix-y OSes. I am competent with CLIs and in writing Bash or Powershell scripts for common use cases.
+              I am familiar with common network debugging tools like Wireshark, curl, netstat, etc.
+            </p>
+              I take an active interest in improving my ability to function as a dev ops engineer, and as a result I think this puts me in a better
+              position to handle full-stack development, deployment, and debugging than the typical web developer.
+            </p>
+            <p>
+              Below is a rough ordering of my ability with modern programming languages that I currently use or have used recently.
+            </p>
+            <!-- Ability with programming languages. -->
+            <section>
+              <ol>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>Bash</li>
+                <li>C#</li>
+                <li>C++</li>
+              </ol>
+            </section>
+
+          </section>
+
+          <!-- Talk about my feelings on random technology stuff. -->
           <section class="content-sec">
             <h2 class="content-sub">technology</h2>
             <!-- Thoughts on JavaScript. -->
@@ -49,20 +113,6 @@
               </p>
             </section>
 
-            <!-- Ability with programming languages. -->
-            <section>
-              <h4>skill level</h4>
-              <ol>
-                <li>JavaScript</li>
-                <li>Java</li>
-                <li>C#</li>
-                <li>C++</li>
-                <li>Python</li>
-                <li>Bash</li>
-                <li>C</li>
-              </ol>
-            </section>
-
             <!-- Editors and IDEs. -->
             <section>
               <h4>editors</h4>
@@ -78,24 +128,45 @@
             <section>
               <div>
                 <h4 id="crypto-header">cryptocurrency</h4>
-                <span class="coin-price">
-                  <img class="coin-img" src="/img/btc.png">
-                  <!-- <span v-if="btc">${{btc.quotes.USD.price}}</span> -->
-                  <!-- <span v-if="btc">${{btcPrice}}</span> -->
-                  <span v-if="btc">${{roundedCoinPrice(btc.quotes.USD.price)}}</span>
-                </span>
-                <span class="coin-price">
-                  <img class="coin-img" src="/img/xmr.png">
-                  <span v-if="xmr">${{roundedCoinPrice(xmr.quotes.USD.price)}}</span>
-                </span>
-                <span class="coin-price">
-                  <img class="coin-img" src="/img/req.png">
-                  <span v-if="req">${{roundedCoinPrice(req.quotes.USD.price)}}</span>
-                </span>
+                <div>
+                  <span class="coin-price">
+                    <img class="coin-img" src="/img/btc.png">
+                    <span v-if="btc">${{roundedCoinPrice(btc.quotes.USD.price)}}</span>
+                    <span :class="{
+                      'pos': btc.quotes.USD.percent_change_24h > 0,
+                      'neg': btc.quotes.USD.percent_change_24h < 0
+                    }">
+                      ({{btc.quotes.USD.percent_change_24h}}%)
+                    </span>
+                  </span>
+                  <span class="coin-price">
+                    <img class="coin-img" src="/img/xmr.png">
+                    <span v-if="xmr">${{roundedCoinPrice(xmr.quotes.USD.price)}}</span>
+                    <span :class="{
+                      'pos': xmr.quotes.USD.percent_change_24h > 0,
+                      'neg': xmr.quotes.USD.percent_change_24h < 0
+                    }">
+                      ({{xmr.quotes.USD.percent_change_24h}}%)
+                    </span>
+                  </span>
+                  <span class="coin-price">
+                    <img class="coin-img" src="/img/req.png">
+                    <span v-if="req">${{roundedCoinPrice(req.quotes.USD.price)}}</span>
+                    <span :class="{
+                      'pos': req.quotes.USD.percent_change_24h > 0,
+                      'neg': req.quotes.USD.percent_change_24h < 0
+                    }">
+                      ({{req.quotes.USD.percent_change_24h}}%)
+                    </span>
+                  </span>
+                </div>
               </div>
               <p>
-                As a college student, my options are somewhat limited in terms of financial investments. One investment
-                that I believe in firmly is cryptocurrency. Which coin might you ask? Currently I'm holding
+                As a college student, I don't have the ability to make a lot of investments. One kind of investment
+                that I make an exception for is
+                <a href="https://splinternews.com/hey-idiots-youre-gonna-lose-all-your-money-on-bitcoin-1820805131" target="_blank">
+                  fake internet money
+                </a>otherwise known as cryptocurrency. Which coins might you ask? Currently I'm holding
                 <a href="https://bitcoin.org" target="_blank">BTC</a>,
                 <a href="https://getmonero.org/" target="_blank">XMR</a>, and
                 <a href="https://request.network/" target="_blank">REQ</a>.
@@ -104,20 +175,23 @@
               </p>
 
               <p>
-                My general hypothesis on the long-term viability of cryptocurrencies is as follows:
+                My hypothesis on the long-term viability of cryptocurrencies is as follows:
               </p>
               <blockquote>
                 In a world plagued by inflation caused largely in part by irresponsible and malicious
-                central banking and bloated government beauracracies, crytpocurrencies flourish while fiat currencies flounder. I find the central component of
-                bitcoin, the &apos;blockchain&apos;, to be a technological marvel. The blockchain acts as a decentralized and largely anonymous ledger that is used to verify
-                the legitimacy of bitcoin transactions over computer networks.
+                central banking and bloated government beauracracies, crytpocurrencies flourish while fiat currencies flounder. The central component of
+                bitcoin and other coins, the blockchain, is a technological marvel. Blockchains act as decentralized and pseudo-anonymous
+                ledgers that are used to verify the legitimacy of cryptocurrency transactions over computer networks.
               </blockquote>
-              <p>
-                If you want a quick overview on the basics of Bitcoin,
-                <a href="http://thumbnails.visually.netdna-cdn.com/bitcoin-infographic_5029189c9cbaf.jpg" target="_blank">this</a>
-                infographic is a good way to get started!
-              </p>
             </section>
+          </section>
+
+          <section class="content-sec">
+            <h2 class="content-sub">closing</h2>
+            <p>
+              My hope is that this site gives the reader a little insight into my thoughts and experiences as a software developer. Don't hesitate to reach out
+              if you have any questions. Thanks for reading!
+            </p>
           </section>
         </article>
       </div>
@@ -203,5 +277,14 @@ export default {
 .coin-img {
   height: 1.5em;
   margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.pos {
+  color: #35e135;
+}
+
+.neg {
+  color: #ec8a8a;
 }
 </style>
