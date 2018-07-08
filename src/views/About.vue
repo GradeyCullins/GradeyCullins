@@ -4,7 +4,7 @@
         <!-- bio -->
         <article id="bio">
           <section class="content-sec">
-           <h2 class="content-sub">introduction</h2>
+           <h1 class="f1 lh-solid mt0 helvetica">Introduction</h1>
            <p>
              Welcome to my website. I am a senior at the
              <a href="http://www.utah.edu/" target="_blank">University of Utah</a>
@@ -24,10 +24,10 @@
           </section>
 
           <section class="content-sec">
-            <h2 class="content-sub">technology</h2>
+            <h1 class="f1 lh-solid mt0 helvetica">Technology</h1>
             <!-- Thoughts on JavaScript. -->
             <section>
-              <h4>programming languages</h4>
+              <h1 class="helvetica f4">programming langauges</h1>
               <p>
                 I enjoy writing simple web pages like this one using the HTML5, CSS3, JavaScript stack. It makes me feel like
                 a much better programmer than I am!
@@ -183,8 +183,15 @@ export default {
 </script>
 
 <style scoped>
+#left_column {
+  max-width: 34em;
+  margin: 0 auto 0 auto;
+  padding: 1rem;
+}
+
 .content-sec {
-  margin-bottom: 3em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid silver;
 }
 
 .content-sub {
