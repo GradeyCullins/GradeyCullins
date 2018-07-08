@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <main class="center measure-wide lh-copy">
+      <router-view/>
+    </main>
   </div>
 </template>
 
