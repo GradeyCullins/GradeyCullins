@@ -1,6 +1,5 @@
 <template>
   <div id="left_column">
-    
       <div id="about">
         <!-- Introduction -->
         <article id="bio">
@@ -10,7 +9,7 @@
             <h1 class="pc-title f1 lh-solid mt0 helvetica">Introduction</h1>
             <ul class="list gc-list">
               <li>
-                <a href="/resources/CS_Resume_Gradey_Cullins_1_8_18_FINAL.pdf" target="_blank">resum&eacute;</a> 
+                <a href="/resources/CS_Resume_Gradey_Cullins_1_8_18_FINAL.pdf" target="_blank">resum&eacute;</a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/gradey-cullins-738b2045?trk=nav_responsive_tab_profile_pic" target="_blank">
@@ -208,8 +207,8 @@
             </section>
           </section>
 
-          <section class="content-sec">
-            <h1 class="pc-title f1 lh-solid mt0 helvetica">Closing</h1>
+          <section>
+            <h1 class="f1 lh-solid mt0 helvetica">Closing</h1>
             <p>
               My hope is that this site gives the reader a little insight into my thoughts and experiences as a software developer. Don't hesitate to reach out
               if you have any questions. Thanks for reading!
@@ -321,7 +320,7 @@ export default {
   margin-right: 1rem;
 }
 
-@media only screen 
+@media only screen
   and (max-width: 700px)
 {
   .coin-price {
