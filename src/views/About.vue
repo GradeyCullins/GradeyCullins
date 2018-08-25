@@ -107,8 +107,8 @@
           <!-- Talk about my feelings on random technology stuff. -->
           <section class="content-sec">
             <!-- Use a media query to show the shorter word when mobile screen is too small. -->
-            <h1 class="mob-title f1 lh-solid mt0 helvetica">Thoughts on tech</h1>
-            <h1 class="pc-title f1 lh-solid mt0 helvetica">Thoughts on technology</h1>
+            <h1 class="mob-title f1 lh-solid mt0 helvetica">Thoughts on Tech</h1>
+            <h1 class="pc-title f1 lh-solid mt0 helvetica">Thoughts on Technology</h1>
             <!-- Thoughts on JavaScript. -->
             <section>
               <h1 class="helvetica f4">JavaScript</h1>
