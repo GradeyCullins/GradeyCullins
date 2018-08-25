@@ -7,8 +7,8 @@
     "serve": "vue-cli-service serve",
     "build": "npm run lint && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "serve:stage": "npm run build && scp -r ./dist root@${GC_BOX}:~/stage.gradeycullins.com/",
-    "serve:prod": "npm run build && scp -r ./dist root@${GC_BOX}:~/gradeycullins.com/",
+    "serve:stage": "npm run build && rsync -rvah ./dist root@${GC_BOX}:~/stage.gradeycullins.com/",
+    "serve:prod": "npm run build && rsync -rvah ./dist root@${GC_BOX}:~/gradeycullins.com/",
     "deploy:prod": "npm run serve:prod && ssh root@198.199.100.116 systemctl restart nginx",
     "deploy:stage": "npm run serve:stage && ssh root@198.199.100.116 systemctl restart nginx"
   },
