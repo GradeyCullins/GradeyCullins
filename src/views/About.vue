@@ -9,7 +9,7 @@
             <h1 class="pc-title f1 lh-solid mt0 helvetica">Introduction</h1>
             <ul class="list gc-list">
               <li>
-                <a href="/resources/CS_Resume_Gradey_Cullins_1_8_18_FINAL.pdf" target="_blank">resum&eacute;</a>
+                <a href="/resources/resume.pdf" target="_blank">resum&eacute;</a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/gradey-cullins-738b2045?trk=nav_responsive_tab_profile_pic" target="_blank">
@@ -71,7 +71,7 @@
           </section>
 
           <section class="content-sec">
-            <h1 class="f1 lh-solid mt0 helvetica">Skillz</h1>
+            <h1 class="f1 lh-solid mt0 helvetica">Skills</h1>
             <p>
               While my current professional work primarily consists of working on
               <a href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank">SPAs</a>,
@@ -80,26 +80,29 @@
             </p>
             <p>
               I have years of experience developing in macOS, GNU/Linux, and Windows operating systems, with
-              a strong preference for working in unix-y OSes. I am competent with CLIs and in writing Bash or Powershell scripts for common use cases.
-              I am familiar with common network debugging tools like Wireshark, curl, netstat, etc.
+              a preference for working in *nix OSes.
             </p>
             <p>
-              I take an active interest in improving my ability to function as a dev ops engineer, and as a result I think this puts me in a better
-              position to handle full-stack development, deployment, and debugging than the typical web developer.
+              I take an active interest in improving corolary skills like devops, testing, and CICD
+              pipelines. As a result my ability to handle full-stack
+              development, deployment, debugging, etc. is elevated beyond the
+              average software developer.
             </p>
             <p>
-              Below is a rough ordering of my ability with modern programming languages that I currently use or have used recently.
+              Below is a non exhaustive list of the languages that I have used most in my academic and
+              professional career.
             </p>
             <!-- Ability with programming languages. -->
             <section>
-              <ol>
+              <ul>
                 <li>JavaScript</li>
                 <li>Java</li>
-                <li>Python</li>
-                <li>Bash</li>
                 <li>C#</li>
+                <li>Python</li>
+                <li>Golang</li>
+                <li>Bash</li>
                 <li>C++</li>
-              </ol>
+              </ul>
             </section>
 
           </section>
@@ -123,13 +126,15 @@
               </p>
               <p>
                 Things turned around after I spent some time learning Angular 2 (which is entirely different than Angular 1)
-                and then later Vue which I've been writing a lot of lately.
+                and then later Vue which I've been using quite a lot lately.
               </p>
               <p>
-                Back when I was writing Angular code, I appreciated Typescript's offering of hard typing and strict
-                enforcement of semicolons. Since taking up Vue, I've adopted
-                <a href="https://standardjs.com/" target="_blank">Javascript Standard Style</a>,
-                which instead drops semicolons and leaves JavaScript in its original untyped form.
+                Back when I was writing Angular 2 code, I appreciated Typescript's offering of hard typing and strict
+                enforcement of semicolons. Since taking up Vue, I've adopted an
+                untyped variant called
+                <a href="https://standardjs.com/" target="_blank">Javascript
+                  Standard Style</a> into all of my personal projects and some
+                of my professional work.
               </p>
             </section>
 
@@ -151,35 +156,39 @@
                 <div class="">
                   <div class="coin-price">
                     <img class="coin-img" src="/img/btc.png">
-                    <span v-if="btc">${{roundedCoinPrice(btc.quotes.USD.price)}}</span>
-                    <span :class="{
-                      'pos': btc.quotes.USD.percent_change_24h > 0,
-                      'neg': btc.quotes.USD.percent_change_24h < 0
-                    }">
-                      ({{btc.quotes.USD.percent_change_24h}}%)
-                    </span>
+                    <template v-if="btc">
+                      <span>${{roundedCoinPrice(btc.quotes.USD.price)}}</span>
+                      <span :class="{
+                        'pos': btc.quotes.USD.percent_change_24h > 0,
+                        'neg': btc.quotes.USD.percent_change_24h < 0
+                      }">
+                        ({{btc.quotes.USD.percent_change_24h}}%)
+                      </span>
+                    </template>
                   </div>
                   <div class="coin-price">
                     <img class="coin-img" src="/img/xmr.png">
-                    <span v-if="xmr">${{roundedCoinPrice(xmr.quotes.USD.price)}}</span>
-                    <span :class="{
-                      'pos': xmr.quotes.USD.percent_change_24h > 0,
-                      'neg': xmr.quotes.USD.percent_change_24h < 0
-                    }">
-                      ({{xmr.quotes.USD.percent_change_24h}}%)
-                    </span>
+                    <template v-if="xmr">
+                      <span>${{roundedCoinPrice(xmr.quotes.USD.price)}}</span>
+                      <span :class="{
+                        'pos': xmr.quotes.USD.percent_change_24h > 0,
+                        'neg': xmr.quotes.USD.percent_change_24h < 0
+                      }">
+                        ({{xmr.quotes.USD.percent_change_24h}}%)
+                      </span>
+                    </template>
                   </div>
                   <div class="coin-price">
-                    <img class="coin-img" src="/img/req.png">
-                    <span v-if="req">${{roundedCoinPrice(req.quotes.USD.price)}}</span>
-                    <span :class="{
-                      'pos': req.quotes.USD.percent_change_24h > 0,
-                      'neg': req.quotes.USD.percent_change_24h < 0
-                    }">
-                    <span>
-                      ({{req.quotes.USD.percent_change_24h}}%)
-                    </span>
-                    </span>
+                    <img class="coin-img" src="/img/amb.png">
+                    <template v-if="amb">
+                      <span >${{roundedCoinPrice(amb.quotes.USD.price)}}</span>
+                      <span :class="{
+                        'pos': amb.quotes.USD.percent_change_24h > 0,
+                        'neg': amb.quotes.USD.percent_change_24h < 0
+                      }">
+                        ({{amb.quotes.USD.percent_change_24h}}%)
+                      </span>
+                    </template>
                   </div>
                 </div>
               </div>
@@ -190,19 +199,27 @@
                   fake internet money</a> otherwise known as cryptocurrency. Which coins might you ask? Currently I'm holding
                 <a href="https://bitcoin.org" target="_blank">BTC</a>,
                 <a href="https://getmonero.org/" target="_blank">XMR</a>, and
-                <a href="https://request.network/" target="_blank">REQ</a>.
-                Bitcoin is the grand daddy, XMR has the most practical usage, and REQ takes
-                an oracle-based approach that seeks to bridge the gap between existing monolithic financial systems and block chain technology.
+                <a href="https://ambrosus.com/" target="_blank">AMB</a>.
+                Bitcoin is the grand daddy, XMR provides practical and secure
+                advantages over BTC, and Ambrosus offers a solution to the vastly complicated
+                and often times failing global food supply chains that directly
+                affect the quality of food we consume.
               </p>
 
               <p>
-                My hypothesis on the long-term viability of cryptocurrencies is as follows:
+                My opinion on the long-term viability of cryptocurrencies is as follows:
               </p>
               <blockquote>
                 In a world plagued by inflation caused largely in part by irresponsible and malicious
-                central banking and bloated government beauracracies, crytpocurrencies flourish while fiat currencies flounder. The central component of
-                bitcoin and other coins, the blockchain, is a technological marvel. Blockchains act as decentralized and pseudo-anonymous
-                ledgers that are used to verify the legitimacy of cryptocurrency transactions over computer networks.
+                central banking and bloated government beauracracies,
+                crytpocurrencies flourish while fiat currencies flounder. A
+                large component of
+                cryptocurrencies, the blockchain, is a technological marvel
+                (its just a linked list tho lol). Blockchains act as decentralized and pseudo-anonymous
+                ledgers that are used to verify the legitimacy of transactions
+                over computer networks and thus provide a crucial advantage
+                over traditional financial and transactional internet
+                services.
               </blockquote>
             </section>
           </section>
@@ -228,16 +245,16 @@ export default {
     return {
       btc: null,
       xmr: null,
-      req: null
+      amb: null
     }
   },
   created () {
     const btcProm = this.getCoinData(1)
     const xmrProm = this.getCoinData(328)
-    const reqProm = this.getCoinData(2071)
+    const ambProm = this.getCoinData(2081)
 
     // Wait for all the coin async loads to complete
-    Promise.all([btcProm, xmrProm, reqProm]).then(coinRes => {
+    Promise.all([btcProm, xmrProm, ambProm]).then(coinRes => {
       for (const coin of coinRes) {
         switch (coin.data.symbol) {
           case 'BTC':
@@ -246,8 +263,8 @@ export default {
           case 'XMR':
             this.xmr = coin.data
             break
-          case 'REQ':
-            this.req = coin.data
+          case 'AMB':
+            this.amb = coin.data
             break
         }
       }
