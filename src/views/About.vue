@@ -48,7 +48,7 @@
               My
               <a href="https://github.com/GradeyCullins" target="_blank">Github</a>
               is a good way to check out some of my recent projects.
-              <p>Some of my recent projects/contributions:</p>
+              <p>Some of my recent projects:</p>
               <ul class="gc-list">
                 <li>
                     My senior capstone project called
@@ -86,7 +86,7 @@
               I take an active interest in improving corolary skills like devops, testing, and CICD
               pipelines. As a result my ability to handle full-stack
               development, deployment, debugging, etc. is elevated beyond the
-              average software developer.
+              average web developer.
             </p>
             <p>
               Below is a non exhaustive list of the languages that I have used most in my academic and
