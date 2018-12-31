@@ -39,6 +39,10 @@
               inventor of the Silk Road. I highly recommend reading Wired's
             <a target="_blank" href="https://www.wired.com/2015/04/silk-road-1/">writeup</a> on his story if you want to learn more.
             </p>
+            <div>
+              <button class="meme-expander" @click="expandMeme('starship-troopers')">Would you like to know more?</button>
+              <img class="img-hide meme" ref="starship-troopers" src="/img/desire_to_know_more_intensifies.gif" alt="">
+            </div>
           </section>
 
           <!-- Talk about recent projects I've worked on or contributed to. -->
@@ -271,7 +275,16 @@ export default {
     })
   },
   methods: {
-    getCoinData: async function (id) {
+    expandMeme (imgRef) {
+      const el = this.$refs[imgRef]
+      // el.style.display = (el.style.display === 'none') ? '' : 'none'
+      if (el.classList.contains('img-hide')) {
+        el.classList.remove('img-hide')
+      } else {
+        el.classList.add('img-hide')
+      }
+    },
+    async getCoinData (id) {
       try {
         const res = await axios.get(`https://api.coinmarketcap.com/v2/ticker/${id}/`)
         return {
@@ -362,5 +375,18 @@ export default {
 
 .gc-list {
   list-style: square;
+}
+
+.img-hide {
+  height: 0;
+}
+
+.meme-expander {
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.meme {
+  margin-bottom: 1em;
 }
 </style>
