@@ -24,9 +24,9 @@
               </li>
             </ul>
             <p>
-              Welcome to my website. I am a senior at the
+              Welcome to my website. I recently graduated from the
               <a href="http://www.utah.edu/" target="_blank">University of Utah</a>
-              majoring in computer science.
+              with a B.S. in computer science.
             </p>
             <p>
               I am currently employed by
@@ -211,19 +211,16 @@
               </p>
 
               <p>
-                My opinion on the long-term viability of cryptocurrencies is as follows:
+                My opinion on the long-term viability of Bitcoin is as follows:
               </p>
               <blockquote>
-                In a world plagued by inflation caused largely in part by irresponsible and malicious
+                In a world plagued by inflation largely caused by irresponsible and malicious
                 central banking and bloated government beauracracies,
-                crytpocurrencies flourish while fiat currencies flounder. A
-                large component of
-                cryptocurrencies, the blockchain, is a technological marvel
-                (its just a linked list tho lol). Blockchains act as decentralized and pseudo-anonymous
-                ledgers that are used to verify the legitimacy of transactions
-                over computer networks and thus provide a crucial advantage
-                over traditional financial and transactional internet
-                services.
+                crytpocurrencies flourish while fiat currencies flounder. Backed by
+                decentralized strength via blockchain, the economic robustness granted
+                through a finite total possible supply of coin, and transparency through
+                open source development, Bitcoin stands to disrupt global finance on a long
+                enough timeline.
               </blockquote>
             </section>
           </section>
