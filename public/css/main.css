@@ -1,0 +1,85 @@
+html, body {
+  font-size: 21px;
+}
+
+.mob-title {
+    display: none;
+}
+.pc-title {
+    display: block;
+}
+@media only screen
+    and (max-width : 400px)
+{
+    .mob-title {
+        display: block;
+    }
+
+    .pc-title {
+        display: none;
+    }
+}
+
+#left_column {
+  padding: 1rem;
+}
+
+.content-sec {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #999;
+}
+
+.content-sub {
+  text-decoration: underline;
+}
+
+#crypto-header {
+  display: inline-block;
+  margin-right: 2em;
+}
+
+.coin-price {
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+@media only screen
+  and (max-width: 700px)
+{
+  .coin-price {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+.coin-img {
+  height: 1.5em;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.pos {
+  color: #35e135;
+}
+
+.neg {
+  color: #ec8a8a;
+}
+
+.gc-list {
+  list-style: square;
+}
+
+.img-hide {
+  height: 0;
+}
+
+.meme-expander {
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.meme {
+  margin-bottom: 1em;
+}
