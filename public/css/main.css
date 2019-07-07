@@ -67,10 +67,6 @@ html, body {
   color: #ec8a8a;
 }
 
-.gc-list {
-  list-style: square;
-}
-
 .img-hide {
   height: 0;
 }
@@ -82,4 +78,8 @@ html, body {
 
 .meme {
   margin-bottom: 1em;
+}
+
+.sq-li {
+  list-style: square;
 }

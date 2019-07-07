@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server",
-    "serve": "vue-cli-service serve",
     "build": "webpack",
     "serve:stage": "npm run build && rsync -rvah ./dist root@${GC_BOX}:~/stage.gradeycullins.com/",
     "serve:prod": "npm run build && rsync -rvah ./dist root@${GC_BOX}:~/gradeycullins.com/",

@@ -26,6 +26,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Custom template',
       template: './public/index.html'
-    }),
+    })
   ]
 };
