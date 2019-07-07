@@ -2,16 +2,6 @@
 import _ from 'lodash'
 import '../css/main.css'
 
-// function component() {
-//   const element = document.createElement('div')
-
-//   element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-
-//   return element
-// }
-
-// document.body.appendChild(component())
-
 const sBtn = document.getElementById('starship-img-btn')
 const sImg = document.getElementById('starship-img')
 
