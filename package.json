@@ -1,34 +1,32 @@
 {
-  "name": "gc",
+  "name": "gradeycullins.com",
   "version": "0.1.0",
+  "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "npm run lint && npm run serve",
+    "start": "webpack-dev-server",
     "serve": "vue-cli-service serve",
-    "build": "npm run lint && vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "build": "webpack",
     "serve:stage": "npm run build && rsync -rvah ./dist root@${GC_BOX}:~/stage.gradeycullins.com/",
     "serve:prod": "npm run build && rsync -rvah ./dist root@${GC_BOX}:~/gradeycullins.com/",
     "deploy:prod": "npm run serve:prod && ssh root@198.199.100.116 systemctl restart nginx",
     "deploy:stage": "npm run serve:stage && ssh root@198.199.100.116 systemctl restart nginx"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "register-service-worker": "^1.0.0",
-    "vue": "^2.5.16",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "lodash": "^4.17.11",
+    "register-service-worker": "^1.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
-    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
-    "@vue/cli-plugin-pwa": "^3.0.0-beta.15",
-    "@vue/cli-service": "^3.0.0-beta.15",
-    "@vue/eslint-config-standard": "^3.0.0-rc.3",
+    "css-loader": "^3.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "style-loader": "^0.23.1",
     "tachyons": "^4.10.0",
-    "vue-template-compiler": "^2.5.16"
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   },
   "eslintConfig": {
     "root": true,
@@ -53,5 +51,16 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "description": "This project contains all the source code for my personal website at: https://gradeycullins.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GradeyCullins/GradeyCullins.git"
+  },
+  "author": "Gradey Cullins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GradeyCullins/GradeyCullins/issues"
+  },
+  "homepage": "https://github.com/GradeyCullins/GradeyCullins#readme"
 }
