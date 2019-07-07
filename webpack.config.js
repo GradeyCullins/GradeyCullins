@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack')
 
 module.exports = {
   entry: './public/src/index.js',
@@ -28,7 +29,10 @@ module.exports = {
       template: './public/index.html'
     }),
     new CopyPlugin([
-      { from: './public/img', to: 'img' }
+      { from: './public/static', to: 'static' }
     ]),
+    new webpack.DefinePlugin({
+      'process.env.ENV': JSON.stringify(process.env.ENV),
+    })
   ]
 };
