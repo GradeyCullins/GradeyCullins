@@ -1,5 +1,6 @@
 html, body {
   font-size: 21px;
+  background-color: #f4f4f4;
 }
 
 .mob-title {
@@ -78,8 +79,4 @@ html, body {
 
 .meme {
   margin-bottom: 1em;
-}
-
-.sq-li {
-  list-style: square;
 }
