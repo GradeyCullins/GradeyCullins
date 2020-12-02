@@ -11,15 +11,27 @@ if (process.env.ENV === 'development') {
     blogLink.href = 'https://blog.gradeycullins.com'
 }
 
-// Add event listener for the meme expand button.
-const sBtn = document.getElementById('starship-img-btn')
-const sImg = document.getElementById('starship-img')
-const toggleImg = () => {
-    if (sImg.classList.contains('img-hide')) {
-        sImg.classList.remove('img-hide')
+// Add event listeners for the meme expand buttons.
+const memeBtnList = document.getElementsByClassName('meme-btn')
+const memeImgList = document.getElementsByClassName('meme-img')
+
+// Little assertion to make sure the meme/button pairs have no stags.
+if (memeBtnList.length !== memeImgList.length) {
+    console.error(`The number of meme expander buttons: ${memeBtnList.length} doesn't equal the number of expandable memes: ${memeImgList.length}`)
+}
+
+const toggleImg = index => () => {
+    const img = memeImgList[index]
+    if (img.classList.contains('img-hide')) {
+        img.classList.remove('img-hide')
     } else {
-        sImg.classList.add('img-hide')
+        img.classList.add('img-hide')
     }
 }
-sBtn.addEventListener('click', toggleImg)
-sImg.addEventListener('click', toggleImg)
+
+for (let i = 0; i < memeBtnList.length; i++) {
+    const btn = memeBtnList[i]
+    const img = memeImgList[i]
+    btn.addEventListener('click', toggleImg(i))
+    img.addEventListener('click', toggleImg(i))
+}
