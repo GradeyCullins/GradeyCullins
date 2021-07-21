@@ -1,6 +1,6 @@
-const path = require('path');
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
@@ -32,7 +32,7 @@ module.exports = {
       { from: './public/static', to: 'static' }
     ]),
     new webpack.DefinePlugin({
-      'process.env.ENV': JSON.stringify(process.env.ENV),
+      'process.env.ENV': JSON.stringify(process.env.ENV)
     })
   ]
-};
+}
