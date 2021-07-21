@@ -10,7 +10,7 @@
     "deploy:prod": "npm run build && rsync -rvah ./dist g@198.199.100.116:~/gradeycullins.com/"
   },
   "dependencies": {
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "register-service-worker": "^1.0.0"
   },
   "devDependencies": {
