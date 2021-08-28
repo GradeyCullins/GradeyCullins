@@ -7,7 +7,7 @@
     "start": "ENV=development webpack-dev-server",
     "build": "ENV=production webpack",
     "deploy:stage": "npm run build && rsync -rvah ./dist g@198.199.100.116:~/stage.gradeycullins.com/",
-    "deploy:prod": "npm run build && rsync -rvah ./dist g@198.199.100.116:~/gradeycullins.com/",
+    "deploy:prod": "npm run build && rsync -rvah ./dist g@198.199.100.116:~/gradeycullins.com/"
   },
   "dependencies": {
     "lodash": "^4.17.20",
