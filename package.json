@@ -1,65 +1,22 @@
 {
-  "name": "gradeycullins.com",
+  "name": "next.gradeycullins.com",
   "version": "0.1.0",
-  "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "ENV=development webpack-dev-server",
-    "build": "ENV=production webpack",
-    "deploy:stage": "npm run build && rsync -rvah ./dist g@198.199.100.116:~/stage.gradeycullins.com/",
-    "deploy:prod": "npm run build && rsync -rvah ./dist g@198.199.100.116:~/gradeycullins.com/"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "lint": "next lint"
   },
   "dependencies": {
-    "lodash": "^4.17.20",
-    "register-service-worker": "^1.0.0"
-  },
-  "devDependencies": {
-    "copy-webpack-plugin": "^5.0.3",
-    "css-loader": "^3.0.0",
-    "file-loader": "^4.0.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1",
-    "style-loader": "^0.23.1",
-    "tachyons": "^4.10.0",
-    "webpack": "^4.35.0",
-    "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.11.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/standard"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
-  "description": "This project contains all the source code for my personal website at: https://gradeycullins.com",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GradeyCullins/GradeyCullins.git"
-  },
-  "author": "Gradey Cullins",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GradeyCullins/GradeyCullins/issues"
-  },
-  "homepage": "https://github.com/GradeyCullins/GradeyCullins#readme"
+    "@next/font": "13.1.1",
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.10",
+    "next": "13.1.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.4"
+  }
 }
