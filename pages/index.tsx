@@ -1,26 +1,31 @@
-import { Inter } from '@next/font/google'
-import Link from 'next/link'
+import GradeyLogo from '../components/GradeyLogo'
+import Spacer from '../components/Spacer'
 import Closing from '../sections/Closing'
 import Intro from '../sections/Intro'
+import Links from '../sections/Links'
 import Projects from '../sections/Projects'
 import Skillset from '../sections/Skillset'
 import Tech from '../sections/Tech'
-// import styles from '../styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <>
-      <main className='center measure-wide lh-copy'>
-        <div id='left_column'>
-          <Intro />
-          <Projects />
-          <Skillset />
-          <Tech />
-          <Closing />
+      <div className='flex'>
+        <div className='px-8'>
+          <Links />
         </div>
-      </main>
+        <div className='mx-auto max-w-[34em]'>
+          <div className='p-4'>
+            <GradeyLogo />
+            <Spacer />
+            <Intro />
+            <Projects />
+            <Skillset />
+            <Tech />
+            <Closing />
+          </div>
+        </div >
+      </div>
     </>
   )
 }
