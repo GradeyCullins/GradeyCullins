@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { useState } from 'react'
+import styled from 'styled-components'
 import MemeButton from '../components/MemeButton'
+import Paragraph from '../components/Paragraph'
 import Section from '../components/Section'
 import desireToKnowMore from '../public/img/desire_to_know_more_intensifies.gif'
 import uCampus from '../public/img/u-of-u-campus.jpg'
@@ -16,25 +18,22 @@ const Intro = () => {
           <figcaption className="mt-2 text-xs font-light italic">Salt Lake City, UT</figcaption>
         </figure>
 
-        <div className="flex flex-col gap-4">
-
-        </div>
-        <p className='mb-2'>
+        <Paragraph>
           Hello and welcome to my website!
-        </p>
+        </Paragraph>
 
-        <p className="mb-2">
-          I'm a computer programmmer, originally hailing from Driggs, Idaho.
-        </p>
+        <Paragraph>
+          I'm a computer programmmer hailing from Driggs, Idaho.
+        </Paragraph>
 
-        <p className="mb-2">
-          I have a degree in CS from the University of Utah where I graduated in 2018.
-        </p>
+        <Paragraph>
+          I have a degree in Computer Science from the University of Utah where I graduated in 2018.
+        </Paragraph>
 
-        <p>
+        <Paragraph>
           Outside of work I take an active interest in cryptocurrencies, computer networking, E-Sports, fitness and food,
           and memes and pop culture.
-        </p>
+        </Paragraph>
 
         {/* Link to Ross story somewhere else */}
         {/* <p>
@@ -47,7 +46,6 @@ const Intro = () => {
         <div>
           <MemeButton
             text='Would you like to know more?'
-            smolText='learn more?'
             className='mt-4 mb-2 w-full'
             onClick={() => setIsImgVisible(!isImgVisible)}
           />

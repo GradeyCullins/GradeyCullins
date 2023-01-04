@@ -1,6 +1,9 @@
+import Image from 'next/image'
+import Paragraph from '../components/Paragraph'
 import Section from '../components/Section'
-
-const SubHeader = ({ text }: { text: string }) => <h1 className="text-xl mb-2 text-gray-700">{text}</h1>
+import SubHeader from '../components/SubHeader'
+import btc from '../public/img/btc.png'
+import xmr from '../public/img/xmr.png'
 
 const Tech = () => (
   <Section header='Thoughts on Tech'>
@@ -8,41 +11,45 @@ const Tech = () => (
       {/* Thoughts on JavaScript */}
       <section>
         <SubHeader text='JavaScript' />
-        <p>
-          When Brendan Eich invented Javascript back during the days of Netscape, everything changed.
+        <Paragraph>
+          Brendan Eich's JavaScript is fast, scriptable, Java-like language in the browser. And it changed everything.
           JavaScript is objectively the greatest programming language ever created.
-        </p>
-        <br />
-        <p>
+        </Paragraph>
+        <Paragraph>
           It combines the swiftness of untyped languages with functional programming features and an inheritance model
           that is so simple your grandmother could learn it. You can run it in the browser, as a web server, or as
           a desktop application that uses hardly any memory at all.
-        </p>
-        <br />
-        <p>
-          Here's the best part there exists an online package registry containing
-          literally thousands of libraries that do anything you could ever possibly imagine. Every one of these packages
-          has been vetted by elite programmers from MIT and Stanford so you can't go wrong adding dependencies
-          willy-nilly. Have fun! 🤡
-        </p>
+        </Paragraph>
+        <Paragraph>
+          The best part? There exists an online package registry containing
+          thousands of libraries that do anything you could ever possibly dream up or prompt GPT3 for. Every one of these packages
+          has been vetted by elite programmers from MIT and Stanford so you can't go wrong adding dependencies willy-nilly. Have fun! 🤡
+        </Paragraph>
       </section>
 
       <section className='my-4'>
         <SubHeader text='cryptocurrency' />
-        <p>
-          People tend to ask programmers what they think about cryptocurrency, as if the two are related.
-          I beg to differ. While I have strong feelings about
-
-        </p>
-        {/* .coin-img {
-  height: 1.5em;
-  margin-right: 0.5em;
-  vertical-align: middle;
-} */}
+        <Paragraph>
+          People often look to programmers for their thoughts on "crypto" as if the two are related.
+          I beg to differ. The average programmer is no less equipped to understand the importance of "crypto"
+          than is the average grocery bagger, airplane pilot, or government bureaucrat.
+        </Paragraph>
+        <Paragraph>
+          That is to say all of
+          them are equally capable of understanding its importance. Just as all of them are equally capable
+          of understanding basic finance, economics, and most importantly, how money works in modern society.
+        </Paragraph>
+        <Paragraph>
+          <span className='font-bold'>TL;DR</span>  big banking, federal reserve, market cycles, inflationary fiat currencies, and quantitative easing = bad.
+          Hard money = good. Bitcoin is the hardest form of currency known to man. Ergo Bitcoin should be adopted as the global currency.
+        </Paragraph>
 
         {/* Bitcoin proselytizing */}
         <div className="my-4">
-          <img className="inline h-5 mr-1" src="/img/btc.png" />
+          <div className="flex gap-2 items-center">
+            <Image src={btc} alt='' />
+            <span className='text-gray-800'>Bitcoin</span>
+          </div>
           <span>
             I believe in Bitcoin because I don't believe in the financial system of the Western world.
             The release of Bitcoin marks an epoch in time that I believe will cause
@@ -52,9 +59,12 @@ const Tech = () => (
 
         {/* Monero shilling. */}
         <div className="my-4">
-          <img className="inline h-5 mr-1" src="/img/xmr.png" />
+          <div className="flex gap-2 items-center">
+            <Image src={xmr} alt='' />
+            <span className='text-gray-800'>Monero</span>
+          </div>
           <span>
-            Monero offers key privacy enhancments over Bitcoin and benefits from a solid network effect
+            Monero offers key privacy enhancements over Bitcoin and benefits from a solid network effect
             due to its prolific usage in dark web markets. XMR has adopted a more reckless strategy for technological
             iteration in order to more quickly achieve what its community deems necessary for a privacy coin.
           </span>

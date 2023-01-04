@@ -1,6 +1,5 @@
 interface IProps {
   text: string
-  smolText: string
   className?: string
   onClick: React.MouseEventHandler
 }

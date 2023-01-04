@@ -5,6 +5,7 @@ import { SecondaryButton } from './Button'
 import { IconButtonInner, InputLabel } from './Input'
 import { TextArea } from './TextArea'
 import Plus from './icons/Plus.svg'
+import Image from 'next/image'
 
 interface IProps {
   pubKey: string
@@ -25,7 +26,7 @@ const NoResizeTextArea = styled(TextArea)`
 const BottomAddInputBtn = ({ onClick }: { onClick: React.MouseEventHandler }): ReactElement => (
   <SecondaryButton onClick={onClick} type='button' style={{ border: 'none', paddingLeft: 0 }}>
     <IconButtonInner>
-      <img src={Plus as string} style={{ width: '14px' }} />
+      <Image src={Plus as string} style={{ width: '14px' }} alt='' />
       Generate keyset
     </IconButtonInner>
   </SecondaryButton>

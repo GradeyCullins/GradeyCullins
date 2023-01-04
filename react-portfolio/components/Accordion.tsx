@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { ReactElement, ReactNode, useState } from 'react'
 import styled from 'styled-components'
 import Chevron from './Chevron.svg'
@@ -30,16 +31,21 @@ export const Accordion = (
   return (
     <div>
       <AccordionTitle onClick={() => setIsOpen(!isOpen)} style={{ marginBottom: '8px' }}>
-        <span>{ title }</span>
-        <img src={Chevron as string} style={{ opacity: 0.3, transition: '0.2s ease all', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} alt='' />
+        <span>{title}</span>
+        <Image
+          src={Chevron}
+          alt=''
+          style={{ opacity: 0.3, transition: '0.2s ease all', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+        />
+        {/* <img src={Chevron as any} style={{ opacity: 0.3, transition: '0.2s ease all', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} alt='' /> */}
       </AccordionTitle>
 
-      { isOpen && description }
+      {isOpen && description}
 
       {
         isOpen &&
         <AccordionBody>
-          { content }
+          {content}
         </AccordionBody>
       }
     </div>

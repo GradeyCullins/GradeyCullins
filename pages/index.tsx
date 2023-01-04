@@ -1,6 +1,7 @@
 import GradeyLogo from '../components/GradeyLogo'
 import Spacer from '../components/Spacer'
 import Closing from '../sections/Closing'
+import Interests from '../sections/Interests'
 import Intro from '../sections/Intro'
 import Links from '../sections/Links'
 import Projects from '../sections/Projects'
@@ -19,6 +20,7 @@ export default function Home() {
             <GradeyLogo />
             <Spacer />
             <Intro />
+            <Interests />
             <Projects />
             <Skillset />
             <Tech />

@@ -22,7 +22,7 @@ export const CloseIcon = (
   </Svg>
 )
 
-export const HoverCloseIcon = styled(CloseIcon)<IProps>`
+export const HoverCloseIcon = styled(CloseIcon) <IProps>`
   color: black;
   transition: all ease-in-out 0.2s;
   cursor: pointer;

@@ -4,6 +4,7 @@ import { COLORS } from '../constants/colors'
 import Chevron from './Chevron.svg'
 import { InputLabel } from './Input'
 import { ScaleIn } from './Animations'
+import Image from 'next/image'
 
 const DropdownWrapper = styled.div`
   user-select: none;
@@ -17,7 +18,7 @@ const DropdownInner = styled.div<{ open: boolean }>`
   border-radius: 5px;
   transition: 0.2s ease all;
   background-color: white;
-  border-color: ${({ open }) => open ? COLORS.PRIMARY: COLORS.GRAY_DARK};
+  border-color: ${({ open }) => open ? COLORS.PRIMARY : COLORS.GRAY_DARK};
   ${({ open }) => open && `box-shadow: 0 0 5px ${COLORS.PRIMARY};`}
   display: flex;
   flex-direction: row;
@@ -124,12 +125,12 @@ export default class Dropdown extends React.Component<IProps, IState> {
         open={this.state.open}
         onClick={() => this.setState({ open: !this.state.open })}>
         {this.props.selectedContent}
-        <img src={Chevron as string} style={{ opacity: 0.3, transition: '0.2s ease all', transform: this.state.open ? 'rotate(180deg)' : 'rotate(0deg)' }} alt='' />
+        <Image src={Chevron} style={{ opacity: 0.3, transition: '0.2s ease all', transform: this.state.open ? 'rotate(180deg)' : 'rotate(0deg)' }} alt='' />
       </DropdownInner>
       {
         this.state.open &&
         <DropdownContent
-          alignLeft ={this.state.alignLeft}
+          alignLeft={this.state.alignLeft}
           ref={r => r && this.repositionDropdown(r)}
           visible={this.state.open}>
           {this.props.dropdownContent}
@@ -146,7 +147,7 @@ type DropdownWithLabelProps = IProps & {
 export const DropdownWithLabel =
   ({ label, selectedContent, dropdownContent, onCloseFn }: DropdownWithLabelProps): ReactElement => {
     return <>
-      <InputLabel>{ label }</InputLabel>
+      <InputLabel>{label}</InputLabel>
       <Dropdown selectedContent={selectedContent} dropdownContent={dropdownContent} onCloseFn={onCloseFn} />
     </>
   }

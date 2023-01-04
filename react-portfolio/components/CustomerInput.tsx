@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { SecondaryButton } from './Button'
 import Plus from './icons/Plus.svg'
 import { FadeIn } from './Animations'
+import Image from 'next/image'
 
 interface IProps {
   inputs: string[]
@@ -26,7 +27,7 @@ const FadeInInput = styled(TextInput)`
 const TopAddInputBtn = ({ onClick }: { onClick: React.MouseEventHandler }): ReactElement => (
   <SecondaryButton onClick={onClick} type='button'>
     <IconButtonInner>
-      <img src={Plus as string} style={{ width: '14px' }} alt='' />
+      <Image src={Plus} style={{ width: '14px' }} alt='' />
       Add custom input
     </IconButtonInner>
   </SecondaryButton>
@@ -35,7 +36,7 @@ const TopAddInputBtn = ({ onClick }: { onClick: React.MouseEventHandler }): Reac
 const BottomAddInputBtn = ({ onClick }: { onClick: React.MouseEventHandler }): ReactElement => (
   <SecondaryButton onClick={onClick} type='button' style={{ border: 'none', paddingLeft: 0 }}>
     <IconButtonInner>
-      <img src={Plus as string} style={{ width: '14px' }} alt='' />
+      <Image src={Plus} style={{ width: '14px' }} alt='' />
       Add another custom input
     </IconButtonInner>
   </SecondaryButton>

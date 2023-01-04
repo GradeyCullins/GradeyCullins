@@ -22,6 +22,7 @@ const Project = ({ title, description, links }: IProject) => (
     <ul className="list-square pl-12">
       {links.map(link => (
         <ListLink
+          key={link.href}
           href={link.href}
           text={link.text}
           blankTarget={link.target === '_blank'}
@@ -41,17 +42,17 @@ const projects: IProject[] = [
     ]
   },
   {
+    title: 'gradeycullins.com',
+    description: 'This website, recently rewritten in React/Next.js.',
+    links: [
+      { href: 'https://github.com/GradeyCullins/GradeyCullins', text: 'source', target: '_blank' },
+    ]
+  },
+  {
     title: 'Skybin',
     description: 'A p2p file storage system for my senior capstone group project.',
     links: [
       { href: 'https://uofu-skybin.github.io/index.html', text: 'project homepage', target: '_blank' },
-    ]
-  },
-  {
-    title: 'gradeycullins.com',
-    description: 'This website, recently rewritten in React/Next.js',
-    links: [
-      { href: 'https://github.com/GradeyCullins/GradeyCullins', text: 'source', target: '_blank' },
     ]
   },
   {
@@ -85,6 +86,7 @@ const Projects = () => {
         <div className="my-4 flex flex-col gap-4">
           {projects.map(project => (
             <Project
+              key={project.title}
               title={project.title}
               description={project.description}
               links={project.links}
@@ -95,7 +97,6 @@ const Projects = () => {
         {/* How I feel when I'm cooooooding. */}
         <MemeButton
           text='What people think coding is like'
-          smolText='when coding'
           className='mb-2 w-full'
           onClick={() => setCodeImgVisible(!isCodeImgVisible)}
         />
@@ -105,7 +106,6 @@ const Projects = () => {
         {/* What I'm actually doing xdxd */}
         <MemeButton
           text="What I'm actually doing"
-          smolText='actually'
           className='mb-2 w-full'
           onClick={() => setGoogleImgVisible(!isGoogleImgVisible)}
         />
