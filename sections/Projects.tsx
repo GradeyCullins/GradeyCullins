@@ -76,7 +76,7 @@ const Projects = () => {
           <a
             href='https://github.com/GradeyCullins'
             target='_blank'
-            className='text-blue-400 visited:text-purple-800 hover:underline'
+            className='text-blue-600 hover:underline'
           >
             Github
           </a>

@@ -8,6 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Gradey Cullins</title>
+        <meta name='description' content='Gradey Cullins personal site and portfolio. Programmer, entrepreneur, code blogger, freelancer.' />
       </Head>
       <Component {...pageProps} />
     </>

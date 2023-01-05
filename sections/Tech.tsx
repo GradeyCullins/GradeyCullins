@@ -48,7 +48,7 @@ const Tech = () => (
         <div className="my-4">
           <div className="flex gap-2 items-center">
             <Image src={btc} alt='' />
-            <span className='text-gray-800'>Bitcoin</span>
+            <span className='text-gray-900'>Bitcoin</span>
           </div>
           <span>
             I believe in Bitcoin because I don't believe in the financial system of the Western world.
@@ -61,7 +61,7 @@ const Tech = () => (
         <div className="my-4">
           <div className="flex gap-2 items-center">
             <Image src={xmr} alt='' />
-            <span className='text-gray-800'>Monero</span>
+            <span className='text-gray-900'>Monero</span>
           </div>
           <span>
             Monero offers key privacy enhancements over Bitcoin and benefits from a solid network effect

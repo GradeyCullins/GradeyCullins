@@ -1,7 +1,8 @@
 import Paragraph from '../components/Paragraph'
 import Section from '../components/Section'
 
-const LangHeader = ({ text }: { text: string }) => <h3 className='text-lg font-semibold text-gray-500'>{text}</h3>
+const LangHeader = ({ text }: { text: string }) => <h3 className='text-lg font-semibold text-gray-800'>{text}</h3>
+
 const Skillset = () => (
   <Section header='Skillset'>
     <>
