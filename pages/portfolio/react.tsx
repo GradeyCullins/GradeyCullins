@@ -85,7 +85,7 @@ export default () => (
         </li>
       </ul>
 
-      <H2>Code demos</H2>
+      <H2>UI Widgets</H2>
       <Accordion title='Web3 Form' content={
         <DemoContainer>
           <CreateProduct />
