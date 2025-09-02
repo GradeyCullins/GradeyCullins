@@ -2,6 +2,12 @@
 
 class HomeController < ApplicationController
   def index
-    render inertia: 'Home'
+    posts = BlogPost.all
+    render inertia: 'Home', props: {
+      posts: posts
+    }
+    # render inertia: 'InertiaExample', props: {
+    #   name: params.fetch(:name, 'zzz'),
+    # }
   end
 end

@@ -2,3 +2,15 @@
 
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
+
+h1 {
+  @apply text-3xl font-bold mb-4;
+}
+
+h2 {
+  @apply text-2xl font-semibold mb-4;
+}
+
+a {
+  @apply text-blue-600
+}

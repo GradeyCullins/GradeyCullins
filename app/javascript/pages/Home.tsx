@@ -1,11 +1,21 @@
-import { Head } from '@inertiajs/react'
+import {Head} from '@inertiajs/react'
+import {BlogPost} from "../types.ts";
+import BlogPreview from "../components/BlogPreview.tsx";
+import HireMe from "../components/HireMe.tsx";
+import AboutMe from "../components/AboutMe.tsx";
 
-export default function Home() {
+type HomeProps = {
+  posts: BlogPost[]
+}
+export default function Home({posts}: HomeProps) {
   return (
     <>
-      <Head title="Gradey Cullins - Personal Website" />
-
-      <div>hello world</div>
+      <Head title="Gradey Cullins - Personal Website"/>
+      <div className="flex flex-col gap-8 mx-auto max-w-[calc(420px+55rem)] lg:pr-[470px]">
+        <AboutMe/>
+        <BlogPreview posts={posts} />
+        <HireMe/>
+      </div>
     </>
   )
 }

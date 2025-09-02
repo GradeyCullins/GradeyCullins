@@ -1,20 +1,15 @@
 class BlogController < ApplicationController
   def index
-    posts = [
-      {
-        :title => 'Post 1',
-        :description => 'here is post 1'
-      },
-      {
-        :title => 'Post 2',
-        :description => 'here is post 2'
-      }
-    ]
-    # render inertia: 'InertiaExample', props: {
-    #   name: params.fetch(:name, 'zzz'),
-    # }
+    posts = BlogPost.all
     render inertia: 'Blog', props: {
-      posts: posts
+      posts: posts.as_json
+    }
+  end
+
+  def show
+    post = BlogPost.find_by(title: params[:title])
+    render inertia: 'BlogPost', props: {
+      post: post.as_json
     }
   end
 end

@@ -1,20 +1,31 @@
-type Post = {
-  title: string
-  content: string
-}
+import { Head, Link } from '@inertiajs/react'
+import {BlogPost} from "../types.ts"
 
 type BlogProps = {
-  posts: Post[]
+  posts: BlogPost[]
 }
+
 export default function Blog({ posts }: BlogProps) {
   console.log('posts', posts)
   return (
     <>
-      <div>Welcome to Blog</div>
-      <div className="flex flex-col gap-2">
-        {posts.map(post => (
-          <div>{post.title}</div>
-        ))}
+      <Head title="Blog" />
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-8">Blog</h1>
+        <div className="flex flex-col gap-4">
+          {posts.map(post => (
+            <Link
+              key={post.id}
+              href={post.href}
+              className="block p-6 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+              <div className="text-gray-600">
+                {new Date(post.createdAt).toLocaleDateString()}
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </>
   )
