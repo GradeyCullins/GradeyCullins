@@ -11,7 +11,7 @@ export default function Home({posts}: HomeProps) {
   return (
     <>
       <Head title="Gradey Cullins - Personal Website"/>
-      <div className="flex flex-col gap-8 mx-auto max-w-[calc(420px+55rem)] lg:pr-[470px]">
+      <div className="flex flex-col gap-6">
         <AboutMe/>
         <BlogPreview posts={posts} />
         <HireMe/>

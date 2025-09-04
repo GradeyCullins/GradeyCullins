@@ -13,7 +13,7 @@ export default function BlogPost({ post }: BlogPostProps) {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
         <div className="text-gray-600 mb-8">
-          {new Date(post.created_at).toLocaleDateString()}
+          {new Date(post.createdAt).toLocaleDateString()}
         </div>
         <div className="prose max-w-none">
           <div className="whitespace-pre-wrap">{post.content}</div>

@@ -12,5 +12,13 @@ h2 {
 }
 
 a {
-  @apply text-blue-600
+  @apply text-blue-600;
+}
+
+input, textarea {
+  @apply rounded border-gray-200;
+}
+
+button {
+  @apply border rounded border-gray-200 bg-blue-600 text-white;
 }

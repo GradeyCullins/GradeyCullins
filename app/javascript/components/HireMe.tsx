@@ -1,3 +1,5 @@
+import {Link} from "@inertiajs/react";
+
 export default function HireMe() {
   return (
     <div>
@@ -6,7 +8,9 @@ export default function HireMe() {
         sizable list of projects, websites, and clients that I will happily reference if you have any interest in
         discussing my software development services.
       </div>
-      <a href="/contact">Contact Me</a>
+      <div className="pt-4">
+        <Link href="/contact" className="border rounded p-2">Contact Me</Link>
+      </div>
     </div>
 
   )
