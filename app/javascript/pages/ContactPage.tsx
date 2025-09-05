@@ -10,7 +10,15 @@ export default function ContactPage() {
 
   function submit (e: FormEvent) {
     e.preventDefault()
-    post('/contact');
+    post('/contact', {
+      onSuccess: () => {
+        setData({
+          name: '',
+          email: '',
+          message: ''
+        })
+      }
+    });
   }
 
   return (
