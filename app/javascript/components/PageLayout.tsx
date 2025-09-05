@@ -6,7 +6,7 @@ type PageLayoutProps = {
 
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <div className="flex flex-col gap-8 mx-auto max-w-[calc(420px+55rem)] lg:pr-[470px]">
+    <div className="flex flex-col gap-8 mx-auto max-w-[1200px] pl-4">
       {children}
     </div>
   )

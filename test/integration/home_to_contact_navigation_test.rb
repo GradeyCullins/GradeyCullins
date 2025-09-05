@@ -22,13 +22,19 @@ class HomeToContactNavigationTest < ApplicationSystemTestCase
     assert_field "Email"
     assert_field "Message"
 
+    contact_details = {
+      name: "Jim Jones",
+      email: "jimjones@example.com",
+      message: "this is my email message saaaar"
+    }
+
     # Fill in the form
-    fill_in "Name", with: "Jim Jones"
-    fill_in "Email", with: "jimjones@example.com"
-    fill_in "Message", with: "this is my email message saaaar"
+    fill_in "Name", with: contact_details[:name]
+    fill_in "Email", with: contact_details[:email]
+    fill_in "Message", with: contact_details[:message]
 
     # Check initial email count
-    assert_difference 'ActionMailer::Base.deliveries.size', +1 do
+    assert_difference "ActionMailer::Base.deliveries.size", +1 do
       # Submit the form
       click_button "Send" # Adjust button text as needed
     end
@@ -45,8 +51,8 @@ class HomeToContactNavigationTest < ApplicationSystemTestCase
     email = ActionMailer::Base.deliveries.last
 
     assert_equal ContactMailer.default[:from], email.from.first
-    assert_includes email.body.to_s, "this is my email message saaaar"
-    assert_includes email.subject, "Jim Jones"
-    assert_includes email.subject, "jimjones@example.com"
+    assert_includes email.body.to_s, contact_details[:message]
+    assert_includes email.subject, contact_details[:name]
+    assert_includes email.subject, contact_details[:email]
   end
 end
