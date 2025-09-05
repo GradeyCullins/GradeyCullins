@@ -5,10 +5,7 @@ import RubyPlugin from 'vite-plugin-ruby'
 
 export default defineConfig({
   plugins: [
-    react({
-      // Enable Fast Refresh
-      fastRefresh: true,
-    }),
+    react(),
     tailwindcss(),
     RubyPlugin(),
   ],
@@ -17,5 +14,5 @@ export default defineConfig({
       port: 3036,
       host: 'localhost',
     },
-  },
+  }
 })
