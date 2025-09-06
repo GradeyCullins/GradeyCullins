@@ -3,6 +3,37 @@
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 
+/* Noto Sans Variable Font */
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/assets/fonts/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/assets/fonts/Noto_Sans/NotoSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: auto;
+}
+
+/* Configure Noto Sans as default font family */
+@theme {
+  --font-family-sans: 'Noto Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Apply Noto Sans as default font */
+body {
+  font-family: 'Noto Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2 {
+  @apply text-slate-800;
+}
+
 h1 {
   @apply text-3xl font-bold mb-4;
 }
@@ -20,5 +51,9 @@ input, textarea {
 }
 
 button {
-  @apply border rounded border-gray-200 bg-blue-600 text-white;
+  @apply border rounded border-gray-200 bg-blue-600 text-white px-2 py-1;
+}
+
+p {
+  @apply mb-2;
 }

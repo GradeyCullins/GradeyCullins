@@ -5,7 +5,7 @@ type BlogProps = {
   posts: BlogPost[]
 }
 
-export default function Blog({ posts }: BlogProps) {
+export default function BlogPage({ posts }: BlogProps) {
   console.log('posts', posts)
   return (
     <>

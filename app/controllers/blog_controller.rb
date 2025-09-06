@@ -1,7 +1,7 @@
 class BlogController < ApplicationController
   def index
     posts = BlogPost.all
-    render inertia: 'Blog', props: {
+    render inertia: 'BlogPage', props: {
       posts: posts.as_json
     }
   end
