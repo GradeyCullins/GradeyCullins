@@ -1,0 +1,97 @@
+/* Noto Sans Variable Font */
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/assets/fonts/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/assets/fonts/Noto_Sans/NotoSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: auto;
+}
+
+/* Test Founders Grotesk Font Family */
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('/assets/fonts/Test_Founders_Grotesk/test-founders-grotesk-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('/assets/fonts/Test_Founders_Grotesk/test-founders-grotesk-light-italic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('/assets/fonts/Test_Founders_Grotesk/test-founders-grotesk-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('/assets/fonts/Test_Founders_Grotesk/test-founders-grotesk-regular-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('/assets/fonts/Test_Founders_Grotesk/test-founders-grotesk-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('/assets/fonts/Test_Founders_Grotesk/test-founders-grotesk-medium-italic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('/assets/fonts/Test_Founders_Grotesk/test-founders-grotesk-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('/assets/fonts/Test_Founders_Grotesk/test-founders-grotesk-semibold-italic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('/assets/fonts/Test_Founders_Grotesk/test-founders-grotesk-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('/assets/fonts/Test_Founders_Grotesk/test-founders-grotesk-bold-italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}

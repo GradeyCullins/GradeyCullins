@@ -2,13 +2,14 @@ import {Head} from '@inertiajs/react'
 import {BlogPost} from "../types.ts";
 import BlogPreview from "../components/BlogPreview.tsx";
 import HireMe from "../components/HireMe.tsx";
-import AboutMe from "../components/AboutMe.tsx";
 import HookIntro from "../components/HookIntro.tsx";
 
-type HomeProps = {
+type AboutProps = {
   posts: BlogPost[]
 }
-export default function Home({posts}: HomeProps) {
+
+export default function AboutPage({posts}: AboutProps) {
+  console.log('heeere')
   return (
     <>
       <Head title="Gradey Cullins - Personal Website"/>

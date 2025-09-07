@@ -1,6 +1,6 @@
 class ContactController < ApplicationController
   def index
-    render inertia: 'ContactPage'
+    render inertia: "ContactPage"
   end
 
   def message

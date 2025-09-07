@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get "blog/:title", to: "blog#show", as: :blog_post
   get "contact", to: "contact#index"
   post "contact", to: "contact#message"
-  get "portfolio", to: "portfolio#index"
+  get "about", to: "about#index"
 end

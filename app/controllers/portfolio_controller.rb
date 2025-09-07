@@ -1,5 +1,5 @@
 class PortfolioController < ApplicationController
   def index
-    render inertia: 'PortfolioPage'
+    render inertia: ''
   end
 end
