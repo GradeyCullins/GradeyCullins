@@ -1,6 +1,8 @@
 class ContactController < ApplicationController
   def index
-    render inertia: "ContactPage"
+    render inertia: "ContactPage", props: {
+      lets_build: params[:lets_build]
+    }
   end
 
   def message

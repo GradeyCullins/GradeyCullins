@@ -32,7 +32,7 @@ input, textarea {
 }
 
 button {
-  @apply rounded bg-blue-600 hover:bg-blue-500 text-white px-2 py-1 cursor-pointer transition-all flex gap-2 shadow-md shadow-blue-800;
+  @apply rounded bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 cursor-pointer transition-all flex gap-2;
 }
 
 /*p, div, span {*/

@@ -31,7 +31,7 @@ export default function HookIntro() {
             Interested in working with me? Drop me a line.
           </p>
         </div>
-        <button>
+        <button className="mt-4">
           Let's Get to Work
           <MoveRight />
         </button>

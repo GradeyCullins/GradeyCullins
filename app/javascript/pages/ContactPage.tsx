@@ -1,14 +1,18 @@
 import {useForm} from "@inertiajs/react"
 import {FormEvent} from "react"
-import ContentWrapper from "../components/ContentWrapper.tsx";
-import {MoveRight} from "lucide-react";
-import WideBlockSection from "../components/WideBlockSection.tsx";
+import ContentWrapper from "../components/ContentWrapper.tsx"
+import {MoveRight} from "lucide-react"
+import WideBlockSection from "../components/WideBlockSection.tsx"
 
-export default function ContactPage() {
+interface ContactPageProps {
+  lets_build?: string
+}
+
+export default function ContactPage({ lets_build }: ContactPageProps) {
   const {data, setData, post, processing} = useForm({
     name: '',
     email: '',
-    message: '',
+    message: lets_build ? `Lets build ${lets_build}` : '',
   })
   
   function submit(e: FormEvent) {
@@ -38,7 +42,7 @@ export default function ContactPage() {
               <div className="w-1/2">
                 <label htmlFor="name-input">Name *</label>
                 <div>
-                  <input name="name" id="name-input" type="text" value={data.name}
+                  <input name="name" id="name-input" type="text" value={data.name} placeholder="name"
                          onChange={(e) => setData('name', e.target.value)} required className="w-full"/>
                 </div>
               </div>
@@ -46,7 +50,7 @@ export default function ContactPage() {
               <div className="w-1/2">
                 <label htmlFor="email-input">Email *</label>
                 <div>
-                  <input name="email" id="email-input" type="email" value={data.email}
+                  <input name="email" id="email-input" type="email" value={data.email} placeholder="email"
                          onChange={(e) => setData('email', e.target.value)} required className="w-full"/>
                 </div>
               </div>
