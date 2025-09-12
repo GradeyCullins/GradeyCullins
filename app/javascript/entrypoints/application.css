@@ -24,19 +24,15 @@ h1 {
 }
 
 h2 {
-  @apply text-2xl font-semibold mb-4;
+  @apply text-2xl font-bold mb-4;
 }
 
 input, textarea {
   @apply rounded border-gray-200;
 }
 
-button {
-  @apply rounded bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 cursor-pointer transition-all flex gap-2;
-}
-
-/*p, div, span {*/
-/*  font-weight: 400;*/
+/*button {*/
+/*  @apply rounded bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 cursor-pointer transition-all flex gap-2;*/
 /*}*/
 
 p {

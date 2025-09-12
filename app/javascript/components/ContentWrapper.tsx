@@ -2,11 +2,12 @@ import {ComponentType, ReactNode} from "react";
 
 type PageLayoutProps = {
   children: ReactNode
+  className?: string
 }
 
-export default function ContentWrapper({ children }: PageLayoutProps) {
+export default function ContentWrapper({ children, className }: PageLayoutProps) {
   return (
-    <div className="mx-auto max-w-[1200px] pl-4">
+    <div className={`mx-auto max-w-[1200px] pl-4 ${className}`}>
       {children}
     </div>
   )

@@ -9,9 +9,11 @@ interface ContactPageProps {
 }
 
 export default function ContactPage({ lets_build }: ContactPageProps) {
+  console.log()
+  
   const {data, setData, post, processing} = useForm({
-    name: '',
-    email: '',
+    name: import.meta.env.DEV ? 'Gradey Cullins' : '',
+    email: import.meta.env.DEV ? 'gradeycullins@gmail.com' : '',
     message: lets_build ? `Lets build ${lets_build}` : '',
   })
   
@@ -31,10 +33,9 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
   return (
     <WideBlockSection className="border-b-0">
       <ContentWrapper>
-        <h2>Send Me a Message</h2>
-        <div className="mb-4">
-          <p>Thank you for taking the time to reach out. I will always respond quickly to inquiries.</p>
-          <p className="text-blue-600">gradeycullins AT gmail.com</p>
+        <h1>Send Me a Message</h1>
+        <div className="mb-4 border-b">
+          <p></p>
         </div>
         <form onSubmit={submit}>
           <div className="w-fit flex flex-col gap-3">
