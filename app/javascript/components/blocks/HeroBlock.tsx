@@ -15,7 +15,6 @@ export default function HeroBlock() {
         {/*<p onClick={handleClickLastName} className="uppercase italic text-9xl">{lastName}</p>*/}
         <p className="uppercase text-9xl font-[200]">Builds</p>
         <p className="uppercase italic text-9xl font-bold">Fast.</p>
-      
       </ContentWrapper>
     </WideBlockSection>
   )

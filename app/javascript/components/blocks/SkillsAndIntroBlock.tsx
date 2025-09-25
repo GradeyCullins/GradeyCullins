@@ -2,6 +2,7 @@ import ContentWrapper from "../ContentWrapper.tsx"
 import WideBlockSection from "../WideBlockSection.tsx"
 import {Link} from "@inertiajs/react"
 import {useState} from "react"
+import {Button} from "../ui/button.tsx";
 
 // const softwareTypes: SoftwareTypeProps[] = [
 //   {label: "Websites", Icon: PanelTop},
@@ -36,10 +37,11 @@ export default function SkillsAndIntroBlock() {
               </p>
             </div>
           </div>
-          <Link className="group mt-4" as="button" href={buildA ? `/contact?lets_build=${buildA}` : '/contact'}>
-            Let's Build {buildA ? buildA : ''}
-            {/*<Brush className="group-hover:rotate-45 transition-transform"/>*/}
-          </Link>
+          <Button variant="default">Let's Build</Button>
+          {/*<Link className="group mt-4" as="button" href={buildA ? `/contact?lets_build=${buildA}` : '/contact'}>*/}
+          {/*  Let's Build {buildA ? buildA : ''}*/}
+          {/*  <Brush className="group-hover:rotate-45 transition-transform"/>*/}
+          {/*</Link>*/}
         </div>
       </ContentWrapper>
     </WideBlockSection>
