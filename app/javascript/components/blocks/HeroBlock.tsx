@@ -11,9 +11,9 @@ export default function HeroBlock() {
   return (
     <WideBlockSection>
       <ContentWrapper>
-        <p className="uppercase text-9xl font-bold">Gradey</p>
+        <p className="uppercase text-9xl font-bold">Rapid</p>
         {/*<p onClick={handleClickLastName} className="uppercase italic text-9xl">{lastName}</p>*/}
-        <p className="uppercase text-9xl font-[200]">Builds</p>
+        <p className="uppercase text-9xl font-[200]">Software</p>
         <p className="uppercase italic text-9xl font-bold">Fast.</p>
       </ContentWrapper>
     </WideBlockSection>

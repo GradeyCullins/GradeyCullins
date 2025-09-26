@@ -7,7 +7,7 @@ interface WideBlockSectionProps {
 
 export default function WideBlockSection({ children, className }: WideBlockSectionProps) {
   return (
-    <div className={`border-b border-gray-200 py-12 inset-shadow-sm ${className}`}>
+    <div className={`border-b border-gray-200 py-12 ${className}`}>
       {children}
     </div>
   )

@@ -1,7 +1,5 @@
 import ContentWrapper from "../ContentWrapper.tsx"
 import WideBlockSection from "../WideBlockSection.tsx"
-import {Link} from "@inertiajs/react"
-import {useState} from "react"
 import {Button} from "../ui/button.tsx";
 
 // const softwareTypes: SoftwareTypeProps[] = [
@@ -14,7 +12,7 @@ import {Button} from "../ui/button.tsx";
 // ]
 
 export default function SkillsAndIntroBlock() {
-  const [buildA] = useState('')
+  // const [buildA] = useState('')
   
   // function handleClickType(label: string) {
   //   setBuildA(label)
