@@ -24,9 +24,9 @@ function SocialLink({href, icon, alt}: {href: string, icon: string, alt: string}
   return (
     <a 
       href={href}
-      className="p-2 border-2 border-black bg-white hover:bg-black hover:invert transition-all duration-200 transform hover:scale-105"
+      className="p-2 bg-white duration-200 transform hover:scale-105 group"
     >
-      <img src={icon} width={20} height={20} alt={alt}/>
+      <img src={icon} width={20} height={20} alt={alt} className="group-hover:invert-50"/>
     </a>
   )
 }
