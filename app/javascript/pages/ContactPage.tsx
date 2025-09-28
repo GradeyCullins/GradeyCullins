@@ -9,7 +9,7 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
   const {data, setData, post, processing} = useForm({
     name: import.meta.env.DEV ? 'Gradey Cullins' : '',
     email: import.meta.env.DEV ? 'gradeycullins@gmail.com' : '',
-    message: lets_build ? `Lets build ${lets_build}` : '',
+    message: lets_build ? `Let's build ${lets_build}` : '',
   })
   
   function submit(e: FormEvent) {
@@ -27,97 +27,94 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
   
   return (
     <>
-      <Head title="CONTACT - GRADEY CULLINS"/>
+      <Head title="Contact - Gradey Cullins"/>
       
       <div className="min-h-screen bg-white">
-        <div className="max-w-4xl mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           
           <div className="mb-16">
-            <div className="space-y-4">
-              <h1 className="text-6xl md:text-4xl font-black uppercase leading-none tracking-tight">
-                LET'S BUILD
+            <div className="space-y-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 leading-tight tracking-tight">
+                Let's build something
               </h1>
-              <h2 className="text-6xl md:text-4xl font-black uppercase leading-none tracking-tight italic">
-                SOMETHING
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight tracking-tight">
+                remarkable together
               </h2>
-              <h3 className="text-6xl md:text-4xl font-black uppercase leading-none tracking-tight">
-                GREAT
-              </h3>
             </div>
             
             <div className="mt-12 max-w-2xl">
-              <div className="border-l-8 border-black pl-6">
-                <p className="text-xl md:text-2xl font-bold uppercase">
-                  READY TO ACCELERATE YOUR PROJECT? DROP ME A MESSAGE AND LET'S DISCUSS YOUR VISION.
+              <div className="border-l-2 border-gray-300 pl-6">
+                <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed">
+                  Ready to bring your vision to life? I'd love to hear about your project and explore how we can work together.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-100 border-4 border-black p-8 md:p-12">
+          <div className="bg-gray-50 rounded-lg p-8 lg:p-12 border border-gray-200">
             <form onSubmit={submit} className="space-y-8">
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-3">
-                  <label htmlFor="name-input" className="block text-lg font-black uppercase tracking-wide">
-                    YOUR NAME *
+                <div className="space-y-2">
+                  <label htmlFor="name-input" className="block text-sm font-medium text-gray-700">
+                    Name *
                   </label>
                   <input 
                     name="name" 
                     id="name-input" 
                     type="text" 
                     value={data.name} 
-                    placeholder="ENTER YOUR NAME"
+                    placeholder="Your name"
                     onChange={(e) => setData('name', e.target.value)} 
                     required 
-                    className="w-full px-6 py-4 text-lg font-bold border-4 border-black focus:outline-none focus:ring-0 focus:border-gray-600 bg-white uppercase placeholder-gray-400"
+                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent bg-white placeholder-gray-500"
                   />
                 </div>
                 
-                <div className="space-y-3">
-                  <label htmlFor="email-input" className="block text-lg font-black uppercase tracking-wide">
-                    YOUR EMAIL *
+                <div className="space-y-2">
+                  <label htmlFor="email-input" className="block text-sm font-medium text-gray-700">
+                    Email *
                   </label>
                   <input 
                     name="email" 
                     id="email-input" 
                     type="email" 
                     value={data.email} 
-                    placeholder="YOUR@EMAIL.COM"
+                    placeholder="your@email.com"
                     onChange={(e) => setData('email', e.target.value)} 
                     required 
-                    className="w-full px-6 py-4 text-lg font-bold border-4 border-black focus:outline-none focus:ring-0 focus:border-gray-600 bg-white uppercase placeholder-gray-400"
+                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent bg-white placeholder-gray-500"
                   />
                 </div>
               </div>
               
-              <div className="space-y-3">
-                <label htmlFor="message-input" className="block text-lg font-black uppercase tracking-wide">
-                  YOUR MESSAGE *
+              <div className="space-y-2">
+                <label htmlFor="message-input" className="block text-sm font-medium text-gray-700">
+                  Message *
                 </label>
                 <textarea 
                   name="message" 
                   id="message-input" 
                   rows={8} 
                   value={data.message}
-                  placeholder="TELL ME ABOUT YOUR PROJECT... WHAT DO YOU WANT TO BUILD? WHAT ARE YOUR GOALS? TIMELINE? BUDGET?"
+                  placeholder="Tell me about your project. What are you looking to build? What are your goals, timeline, and budget?"
                   onChange={(e) => setData('message', e.target.value)} 
                   required
-                  className="w-full px-6 py-4 text-lg font-bold border-4 border-black focus:outline-none focus:ring-0 focus:border-gray-600 bg-white placeholder-gray-400 resize-none"
+                  className="w-full px-4 py-3 text-base border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent bg-white placeholder-gray-500 resize-none"
                 />
               </div>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-4">
-                <div className="text-sm font-bold uppercase text-gray-600 tracking-wider">
-                  * REQUIRED FIELDS
+                <div className="text-sm text-gray-500">
+                  * Required fields
                 </div>
                 
                 <button 
                   type="submit" 
                   disabled={processing}
-                  className="bg-black text-white px-12 py-6 text-xl font-black uppercase tracking-wide hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 border-4 border-black hover:border-gray-800 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  className="bg-gray-900 text-white px-8 py-3 text-base font-medium rounded-sm hover:bg-gray-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {processing ? 'SENDING...' : 'SEND MESSAGE →'}
+                  {processing ? 'Sending...' : 'Send message'}
                 </button>
               </div>
             </form>
@@ -125,42 +122,48 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-black text-2xl mx-auto">
-                ⚡
+              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-              <h4 className="text-xl font-black uppercase">FAST RESPONSE</h4>
-              <p className="font-semibold text-gray-600">
+              <h4 className="text-lg font-semibold text-gray-900">Quick Response</h4>
+              <p className="text-gray-600">
                 Usually respond within 24 hours
               </p>
             </div>
             
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-black text-2xl mx-auto">
-                🎯
+              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
               </div>
-              <h4 className="text-xl font-black uppercase">DIRECT CONTACT</h4>
-              <p className="font-semibold text-gray-600">
+              <h4 className="text-lg font-semibold text-gray-900">Direct Contact</h4>
+              <p className="text-gray-600">
                 Straight to me, no middlemen
               </p>
             </div>
             
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-black text-2xl mx-auto">
-                🚀
+              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
-              <h4 className="text-xl font-black uppercase">READY TO START</h4>
-              <p className="font-semibold text-gray-600">
-                Can begin immediately
+              <h4 className="text-lg font-semibold text-gray-900">Ready to Start</h4>
+              <p className="text-gray-600">
+                Available for immediate projects
               </p>
             </div>
           </div>
 
           <div className="mt-16 text-center">
-            <div className="border-t-4 border-black pt-8">
-              <p className="text-lg font-bold text-gray-600 uppercase tracking-wide">
-                OR EMAIL DIRECTLY: 
-                <a href="mailto:gradeycullins@gmail.com" className="text-black hover:underline ml-2">
-                  GRADEYCULLINS@GMAIL.COM
+            <div className="border-t border-gray-200 pt-8">
+              <p className="text-base text-gray-600">
+                Prefer email? Reach me directly at{' '}
+                <a href="mailto:gradeycullins@gmail.com" className="text-gray-900 hover:underline font-medium">
+                  gradeycullins@gmail.com
                 </a>
               </p>
             </div>

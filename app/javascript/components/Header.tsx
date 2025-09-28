@@ -13,7 +13,7 @@ function HeaderLink({children, href}: HeaderLinkProps) {
   return (
     <Link 
       href={href} 
-      className="font-black uppercase tracking-wide text-black hover:bg-black hover:text-white px-4 py-2 border-2 border-black transition-all duration-200 transform hover:scale-105"
+      className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200"
     >
       {children}
     </Link>
@@ -24,55 +24,55 @@ function SocialLink({href, icon, alt}: {href: string, icon: string, alt: string}
   return (
     <a 
       href={href}
-      className="p-2 bg-white duration-200 transform hover:scale-105 group"
+      className="p-2 text-gray-500 hover:text-gray-700 transition-colors duration-200"
     >
-      <img src={icon} width={20} height={20} alt={alt} className="group-hover:invert-50"/>
+      <img src={icon} width={18} height={18} alt={alt} className="opacity-70 hover:opacity-100 transition-opacity"/>
     </a>
   )
 }
 
 export default function Header() {
   return (
-    <div className="border-b-8 border-black bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+    <header className="border-b border-gray-200 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             
             <Link href="/" className="group">
-              <div className="flex items-center space-x-2">
-                <div className="bg-black text-white px-4 py-2 font-black uppercase tracking-wider group-hover:bg-gray-800 transition-colors">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-gray-900 text-white rounded-sm flex items-center justify-center text-sm font-semibold group-hover:bg-gray-800 transition-colors">
                   GC
                 </div>
                 <div className="hidden sm:block">
-                  <div className="text-xl font-black uppercase tracking-tight">
-                    GRADEY CULLINS
+                  <div className="text-lg font-semibold text-gray-900 tracking-tight">
+                    Gradey Cullins
                   </div>
-                  <div className="text-sm font-bold uppercase text-gray-600 tracking-wider">
-                    SOFTWARE ARCHITECT
+                  <div className="text-sm text-gray-600">
+                    Software Architect
                   </div>
                 </div>
               </div>
             </Link>
             
-            <nav className="flex items-center gap-2 md:gap-4">
-              <div className="flex gap-2">
-                <HeaderLink href="/">HOME</HeaderLink>
-                <HeaderLink href="/blog">BLOG</HeaderLink>
-                <HeaderLink href="/about">ABOUT</HeaderLink>
+            <nav className="flex items-center gap-1">
+              <div className="flex gap-1">
+                <HeaderLink href="/">Home</HeaderLink>
+                <HeaderLink href="/blog">Blog</HeaderLink>
+                <HeaderLink href="/about">About</HeaderLink>
               </div>
               
-              <div className="w-px h-8 bg-black mx-2"></div>
+              <div className="w-px h-4 bg-gray-300 mx-3"></div>
               
               <Link 
                 href="/contact"
-                className="bg-black text-white font-black uppercase px-6 py-3 hover:bg-gray-800 transition-all duration-200 transform hover:scale-105 border-2 border-black"
+                className="bg-gray-900 text-white px-4 py-2 text-sm font-medium rounded-sm hover:bg-gray-800 transition-colors duration-200"
               >
-                CONTACT →
+                Contact
               </Link>
               
-              <div className="w-px h-8 bg-black mx-2"></div>
+              <div className="w-px h-4 bg-gray-300 mx-3"></div>
               
-              <div className="flex gap-2">
+              <div className="flex gap-1">
                 <SocialLink 
                   href="https://x.com/gradeyboland" 
                   icon={XIcon} 
@@ -93,6 +93,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
