@@ -16,7 +16,7 @@ export default function LandingPage({}: LandingPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
             
             <div className="flex flex-col justify-center py-16 lg:py-20">
-              <div className="space-y-8">
+              <div className="space-y-6">
                 <div className="space-y-2">
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 leading-tight tracking-tight">
                     Building software
@@ -61,7 +61,7 @@ export default function LandingPage({}: LandingPageProps) {
                   </Link>
                 </div>
                 
-                <div className="pt-4">
+                <div>
                   <p className="text-sm text-gray-500">
                     Web Development • Product Design • Technical Architecture • AI Integration
                   </p>
@@ -69,19 +69,22 @@ export default function LandingPage({}: LandingPageProps) {
               </div>
             </div>
             
-            <div className="flex items-center justify-center lg:justify-end py-16 lg:py-20">
+            <div className="flex items-center justify-center lg:justify-end py-8 lg:py-20">
               <div className="relative">
-                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden shadow-lg">
+                <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden shadow-lg">
                   <img 
                     src={gradeGrayImage}
                     alt="Gradey Cullins - Software Architect"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-3 -right-3 bg-white px-4 py-2 rounded-sm shadow-md border border-gray-200">
-                  <p className="text-sm font-medium text-gray-700">
-                    Available for projects
-                  </p>
+                <div className="absolute -bottom-3 -right-3 bg-white px-3 py-2 rounded-sm shadow-md border border-gray-200">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <p className="text-sm font-medium text-gray-700">
+                      available for projects
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
