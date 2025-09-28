@@ -17,7 +17,7 @@ export default function LandingPage({}: LandingPageProps) {
             
             <div className="flex flex-col justify-center py-16 lg:py-20">
               <div className="space-y-8">
-                <div className="space-y-6">
+                <div className="space-y-2">
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 leading-tight tracking-tight">
                     Building software
                   </h1>

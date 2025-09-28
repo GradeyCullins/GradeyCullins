@@ -33,7 +33,7 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           
           <div className="mb-16">
-            <div className="space-y-6">
+            <div className="space-y-2">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 leading-tight tracking-tight">
                 Let's build something
               </h1>
