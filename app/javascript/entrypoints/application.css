@@ -11,20 +11,8 @@
 }
 
 body {
-  font-family: 'Noto Sans', ui-sans-serif, system-ui, sans-serif;
+  /*font-family: 'Noto Sans', ui-sans-serif, system-ui, sans-serif;*/
   /*font-family: 'Test Founders Grotesk', ui-sans-serif, system-ui, sans-serif;*/
-}
-
-h1, h2 {
-  @apply text-slate-800;
-}
-
-h1 {
-  @apply text-3xl font-bold mb-4;
-}
-
-h2 {
-  @apply text-2xl font-bold mb-4;
 }
 
 input, textarea {

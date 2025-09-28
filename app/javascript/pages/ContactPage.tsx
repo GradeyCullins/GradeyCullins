@@ -34,13 +34,13 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
           
           <div className="mb-16">
             <div className="space-y-4">
-              <h1 className="text-6xl md:text-8xl font-black uppercase leading-none tracking-tight">
+              <h1 className="text-6xl md:text-4xl font-black uppercase leading-none tracking-tight">
                 LET'S BUILD
               </h1>
-              <h2 className="text-6xl md:text-8xl font-black uppercase leading-none tracking-tight italic">
+              <h2 className="text-6xl md:text-4xl font-black uppercase leading-none tracking-tight italic">
                 SOMETHING
               </h2>
-              <h3 className="text-6xl md:text-8xl font-black uppercase leading-none tracking-tight">
+              <h3 className="text-6xl md:text-4xl font-black uppercase leading-none tracking-tight">
                 GREAT
               </h3>
             </div>
@@ -54,7 +54,7 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
             </div>
           </div>
 
-          <div className="bg-gray-100 border-8 border-black p-8 md:p-12">
+          <div className="bg-gray-100 border-4 border-black p-8 md:p-12">
             <form onSubmit={submit} className="space-y-8">
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

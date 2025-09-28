@@ -18,14 +18,14 @@ export default function LandingPage({}: LandingPageProps) {
             <div className="flex flex-col justify-center py-20">
               <div className="space-y-8">
                 <div className="space-y-2">
-                  <h1 className="text-8xl md:text-9xl font-black uppercase leading-none tracking-tight">
-                    RAPID
+                  <h1 className="text-xl md:text-[5rem] font-bold uppercase leading-none tracking-tight">
+                    mvp
                   </h1>
-                  <h1 className="text-8xl md:text-9xl font-black uppercase leading-none tracking-tight">
-                    SOFTWARE
+                  <h1 className="text-xl md:text-[5rem] font-bold uppercase leading-none tracking-tight">
+                    software
                   </h1>
-                  <h1 className="text-8xl md:text-9xl font-black uppercase leading-none tracking-tight italic">
-                    ARCHITECT
+                  <h1 className="text-xl md:text-[5rem] font-bold uppercase leading-none tracking-tight">
+                    Champion
                   </h1>
                 </div>
                 
@@ -38,13 +38,13 @@ export default function LandingPage({}: LandingPageProps) {
                   
                   <div className="space-y-4 text-lg">
                     <p className="font-semibold">
-                      ⚡ LIGHTNING-FAST DEVELOPMENT
+                      – LIGHTNING-FAST DEVELOPMENT
                     </p>
                     <p className="font-semibold">
-                      🎯 PIXEL-PERFECT EXECUTION  
+                      – PIXEL-PERFECT EXECUTION
                     </p>
                     <p className="font-semibold">
-                      🚀 SCALABLE ARCHITECTURE
+                      – SCALABLE ARCHITECTURE
                     </p>
                   </div>
                 </div>
@@ -60,7 +60,7 @@ export default function LandingPage({}: LandingPageProps) {
                 
                 <div className="pt-4">
                   <p className="text-sm uppercase font-bold text-gray-600 tracking-wider">
-                    RAILS • REACT • TYPESCRIPT • NODE.JS • PYTHON
+                    web • design • databases • ai
                   </p>
                 </div>
               </div>
