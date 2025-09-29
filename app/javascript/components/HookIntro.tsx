@@ -1,6 +1,5 @@
 import WideBlockSection from "./WideBlockSection.tsx";
 import ContentWrapper from "./ContentWrapper.tsx";
-import {MoveRight} from "lucide-react";
 
 export default function HookIntro() {
   return (

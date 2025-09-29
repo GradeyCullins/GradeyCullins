@@ -16,8 +16,8 @@ export default function AboutPage({posts}: AboutProps) {
       <div>
         {/*<AboutMe/>*/}
         <HookIntro />
-        <BlogPreview posts={posts} />
-        <HireMe/>
+        {/*<BlogPreview posts={posts} />*/}
+        {/*<HireMe/>*/}
       </div>
     </>
   )

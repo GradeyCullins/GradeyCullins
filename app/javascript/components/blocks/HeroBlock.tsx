@@ -8,9 +8,9 @@ export default function HeroBlock() {
       <Head>
         <link rel="preload" as="image" href={gradeGrayImage} fetchPriority="high"/>
       </Head>
-      <div className="min-h-screen bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+      <div className="h-[calc(100vh-80px)] bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
             
             <div className="flex flex-col justify-center py-16 lg:py-20">
               <div className="space-y-6">
