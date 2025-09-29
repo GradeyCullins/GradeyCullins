@@ -70,7 +70,7 @@ export default function HeroBlock() {
             
             <div className="flex items-center justify-center lg:justify-end py-8 lg:py-20">
               <div className="relative">
-                <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden bg-white">
+                <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden bg-white shadow-2xl">
                   <img
                     src={gradeGrayImage}
                     alt="Gradey Cullins - Software Architect"
@@ -84,7 +84,7 @@ export default function HeroBlock() {
                   />
                 </div>
                 <div
-                  className="absolute -bottom-3 -right-3 bg-white px-3 py-2 rounded-sm shadow-md border border-t-purple-500 border-b-purple-500 border-r-blue-400 border-l-blue-400">
+                  className="absolute -bottom-3 -right-3 bg-white px-3 py-2 rounded-sm shadow-md border">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <p className="text-sm font-medium text-gray-700">

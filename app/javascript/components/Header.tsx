@@ -64,8 +64,14 @@ export default function Header() {
             
             <Link href="/" className="group">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gray-900 text-white rounded-sm flex items-center justify-center text-sm font-semibold group-hover:bg-gray-800 transition-colors">
-                  GC
+                <div className="w-10 h-10 rounded-sm overflow-hidden group-hover:opacity-80 transition-opacity">
+                  <img 
+                    src="/icon.svg" 
+                    alt="GC Logo" 
+                    className="w-full h-full object-cover"
+                    width="40"
+                    height="40"
+                  />
                 </div>
                 <div className="block">
                   <div className="text-lg font-semibold text-gray-900 tracking-tight">

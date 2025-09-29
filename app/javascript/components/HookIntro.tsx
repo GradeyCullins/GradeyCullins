@@ -6,8 +6,8 @@ export default function HookIntro() {
   return (
     <WideBlockSection>
       <ContentWrapper>
-        <h1>Gradey Cullins</h1>
-        <div className="mb-4 pb-2 border-b flex gap-2 text-sm text-slate-500">
+        <h1 className="font-bold text-2xl mb-1">Gradey Cullins</h1>
+        <div className="mb-4 pb-4 border-b flex flex-wrap gap-1 text-sm text-slate-500">
           <span>• senior developer</span>
           <span>• UI/UX + web design</span>
           <span>• performant backend services</span>
@@ -27,14 +27,7 @@ export default function HookIntro() {
             developer to bootstrap an MVP or build a beautiful static website for your business you've come to the right
             place.
           </p>
-          <p>
-            Interested in working with me? Drop me a line.
-          </p>
         </div>
-        <button className="mt-4">
-          Let's Get to Work
-          <MoveRight />
-        </button>
       </ContentWrapper>
     </WideBlockSection>
 
