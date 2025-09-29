@@ -1,5 +1,6 @@
 import {useForm, Head} from "@inertiajs/react"
 import {FormEvent} from "react"
+import GradientButton from "../components/GradientButton.tsx"
 
 interface ContactPageProps {
   lets_build?: string
@@ -67,7 +68,7 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
                     placeholder="Your name"
                     onChange={(e) => setData('name', e.target.value)} 
                     required 
-                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent bg-white placeholder-gray-500"
+                    className="gradient-focus w-full px-4 py-3 text-base border border-gray-300 rounded-sm bg-white placeholder-gray-500 transition-all duration-200"
                   />
                 </div>
                 
@@ -83,7 +84,7 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
                     placeholder="your@email.com"
                     onChange={(e) => setData('email', e.target.value)} 
                     required 
-                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent bg-white placeholder-gray-500"
+                    className="gradient-focus w-full px-4 py-3 text-base border border-gray-300 rounded-sm bg-white placeholder-gray-500 transition-all duration-200"
                   />
                 </div>
               </div>
@@ -100,7 +101,7 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
                   placeholder="Tell me about your project. What are you looking to build? What are your goals, timeline, and budget?"
                   onChange={(e) => setData('message', e.target.value)} 
                   required
-                  className="w-full px-4 py-3 text-base border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent bg-white placeholder-gray-500 resize-none"
+                  className="gradient-focus w-full px-4 py-3 text-base border border-gray-300 rounded-sm bg-white placeholder-gray-500 resize-none transition-all duration-200"
                 />
               </div>
               
@@ -109,13 +110,12 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
                   * Required fields
                 </div>
                 
-                <button 
+                <GradientButton 
                   type="submit" 
                   disabled={processing}
-                  className="bg-gray-900 text-white px-8 py-3 text-base font-medium rounded-sm hover:bg-gray-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {processing ? 'Sending...' : 'Send message'}
-                </button>
+                </GradientButton>
               </div>
             </form>
           </div>

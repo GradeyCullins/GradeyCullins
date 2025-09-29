@@ -67,7 +67,7 @@ export default function Header() {
                 <div className="w-10 h-10 bg-gray-900 text-white rounded-sm flex items-center justify-center text-sm font-semibold group-hover:bg-gray-800 transition-colors">
                   GC
                 </div>
-                <div className="hidden sm:block">
+                <div className="block">
                   <div className="text-lg font-semibold text-gray-900 tracking-tight">
                     Gradey Cullins
                   </div>
