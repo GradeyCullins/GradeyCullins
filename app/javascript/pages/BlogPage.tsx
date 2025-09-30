@@ -1,4 +1,4 @@
-import { Head, Link } from '@inertiajs/react'
+import { Head } from '@inertiajs/react'
 import {BlogPost} from "../types.ts"
 import ContentWrapper from "../components/ContentWrapper.tsx";
 import WideBlockSection from "../components/WideBlockSection.tsx";
@@ -7,7 +7,7 @@ type BlogProps = {
   posts: BlogPost[]
 }
 
-export default function BlogPage({ posts }: BlogProps) {
+export default function BlogPage({}: BlogProps) {
   return (
     <>
       <Head title="Blog" />

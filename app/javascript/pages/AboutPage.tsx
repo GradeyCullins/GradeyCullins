@@ -8,7 +8,7 @@ type AboutProps = {
   posts: BlogPost[]
 }
 
-export default function AboutPage({posts}: AboutProps) {
+export default function AboutPage({}: AboutProps) {
   console.log('heeere')
   return (
     <>
