@@ -3,6 +3,7 @@ import {ReactNode, useState} from "react"
 import XIcon from '/assets/icons/x.svg'
 import GithubIcon from '/assets/icons/github.svg'
 import GmailIcon from '/assets/icons/gmail.svg'
+import LinkedinIcon from '/assets/icons/linked-in.svg'
 
 type HeaderLinkProps = {
   children: ReactNode
@@ -115,8 +116,8 @@ export default function Header() {
                   alt="GitHub"
                 />
                 <SocialLink 
-                  href="mailto:gradeycullins@gmail.com" 
-                  icon={GmailIcon} 
+                  href="https://www.linkedin.com/in/gradey-cullins-738b2045/"
+                  icon={LinkedinIcon}
                   alt="Email"
                 />
               </div>
