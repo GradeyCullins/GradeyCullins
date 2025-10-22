@@ -38,3 +38,16 @@ input, textarea {
     box-shadow: 0 0 0 1px transparent;
   }
 }
+
+.about-header {
+  @apply text-xl font-semibold mb-2;
+}
+
+.link {
+  @apply text-blue-600 underline;
+}
+
+.link:visited {
+  @apply text-purple-600;
+}
+

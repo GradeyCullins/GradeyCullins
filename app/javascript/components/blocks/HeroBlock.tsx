@@ -94,7 +94,6 @@ export default function HeroBlock() {
                 </div>
               </div>
             </div>
-          
           </div>
         </div>
       </div>
