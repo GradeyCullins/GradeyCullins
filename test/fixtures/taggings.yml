@@ -1,0 +1,7 @@
+published_writing:
+  blog_post: published
+  tag: writing
+
+draft_engineering:
+  blog_post: draft
+  tag: engineering

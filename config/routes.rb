@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   root "home#index"
 
   get "blog", to: "blog#index"
-  get "blog/:title", to: "blog#show", as: :blog_post
+  get "blog/:slug", to: "blog#show", as: :blog_post
+  scope :admin, as: :admin do
+    resources :blog_posts, param: :slug, controller: :blog_posts
+    resources :tags, param: :slug, controller: :tags
+  end
   get "contact", to: "contact#index"
   post "contact", to: "contact#message"
   get "about", to: "about#index"

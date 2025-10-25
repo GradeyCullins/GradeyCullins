@@ -10,7 +10,6 @@ export default function LandingPage({}: LandingPageProps) {
   return (
     <>
       <Head title="Gradey Cullins - Software Architect"/>
-      
       <HeroBlock />
     </>
   )

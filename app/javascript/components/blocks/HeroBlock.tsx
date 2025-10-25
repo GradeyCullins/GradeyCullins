@@ -20,7 +20,7 @@ export default function HeroBlock() {
                     Building software
                   </h1>
                   <h2
-                    className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight tracking-tight">
+                    className="text-4xl sm:text-5xl lg:text-6xl text-gray-600 italic leading-tight tracking-tight">
                     that matters
                   </h2>
                 </div>
@@ -70,7 +70,8 @@ export default function HeroBlock() {
             
             <div className="flex items-center justify-center lg:justify-end py-8 lg:py-20">
               <div className="relative">
-                <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden bg-white shadow-2xl">
+                <div
+                  className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden bg-white shadow-2xl">
                   <img
                     src={gradeGrayImage}
                     alt="Gradey Cullins - Software Architect"
