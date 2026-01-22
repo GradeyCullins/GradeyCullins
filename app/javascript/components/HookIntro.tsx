@@ -5,11 +5,11 @@ export default function HookIntro() {
   return (
     <WideBlockSection>
       <ContentWrapper>
-        <h1 className="font-bold text-2xl mb-1">Who is Gradey Cullins?</h1>
+        <h1 className="font-bold text-4xl mb-1">About Me</h1>
         <div className="mb-4 pb-4 border-b flex flex-wrap gap-1 text-sm text-slate-500">
-          <span>senior developer | </span>
-          <span>UI/UX + web design | </span>
-          <span>performant backend services | </span>
+          <span>senior developer •</span>
+          <span>UI/UX + web design •</span>
+          <span>performant backend services •</span>
           <span>frontend savant</span>
         </div>
         <div className="max-w-[1200px]">
@@ -27,6 +27,9 @@ export default function HookIntro() {
               messages or questions about my career or freelance services.
             </p>
           </div>
+
+          <hr className="my-2"/>
+
           <h2>Roles</h2>
           <div className="about-section">
             <div>
@@ -98,6 +101,7 @@ export default function HookIntro() {
             <p className="when">2017-2018</p>
           </div>
           
+          <hr className="my-2"/>
           <h2>Education</h2>
           <div className="about-section">
             <div>

@@ -38,10 +38,11 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem 'aws-sdk-rails', '~> 5'
-gem 'aws-actionmailer-ses', '~> 1'
+gem "aws-sdk-rails", "~> 5"
 
-gem 'active_model_serializers'
+gem "aws-actionmailer-ses", "~> 1"
+
+gem "active_model_serializers"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -51,11 +52,11 @@ group :development, :test do
   gem "brakeman", require: false
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
-  gem 'rubocop', require: false
+  gem "rubocop", require: false
   gem "rubocop-rails-omakase", require: false
 
   # Load environment variables from .env file
-  gem 'dotenv-rails'
+  gem "dotenv-rails"
 end
 
 group :development do

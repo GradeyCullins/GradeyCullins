@@ -1,7 +1,7 @@
 @reference "../../entrypoints/application.css";
 
 h2 {
-  @apply text-2xl font-bold mb-2;
+  @apply text-3xl font-bold mb-4;
 }
 
 .about-section {
