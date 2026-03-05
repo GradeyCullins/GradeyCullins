@@ -19,7 +19,12 @@ Rails.application.routes.draw do
     resources :blog_posts, param: :slug, controller: :blog_posts
     resources :tags, param: :slug, controller: :tags
   end
+  # Chat API
+  post "api/chats", to: "chats#create"
+  post "api/chats/:chat_id/messages", to: "chats#message"
+
   get "contact", to: "contact#index"
   post "contact", to: "contact#message"
-  get "about", to: "about#index"
+  get "cv", to: "cv#index"
+  get "cv/download", to: "cv#download", as: :cv_download
 end

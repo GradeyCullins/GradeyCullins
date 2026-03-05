@@ -102,3 +102,105 @@ post_definitions.each do |definition|
 end
 
 puts "Seeded #{BlogPost.count} blog posts with tags."
+
+# ── CV Data ──────────────────────────────────────────────────────────────────
+
+puts "Seeding CV intro..."
+cv_intro = CvIntro.first_or_initialize
+cv_intro.assign_attributes(
+  summary: "Senior full stack developer with experience in healthcare, finance, and B2B enterprise software.",
+  linkedin_url: "https://www.linkedin.com/in/gradey-cullins-738b2045/",
+  github_url: "https://github.com/GradeyCullins",
+  email: "gradeycullins@gmail.com"
+)
+cv_intro.save!
+
+puts "Seeding CV roles..."
+cv_roles = [
+  {
+    title: "Software Developer II",
+    company: "TruHearing",
+    company_url: "https://truhearing.com",
+    description: "Building an enterprise healthcare app with React, Ruby on Rails, Postgres, and AWS.",
+    highlights: [
+      "built sophisticated insurance claim 837 payer routing system",
+      "enhancing insurance claim generation and order workflow features",
+      "add query optimizations resulting in 50-125% latency reduction",
+      "helping roll out AI assisted development department wide",
+      "add pusher.js for websockets-based communication between server and client for real-time order delivery notifications"
+    ],
+    start_date: "2024",
+    end_date: nil,
+    position: 0
+  },
+  {
+    title: "Senior Software Engineer",
+    company: "ICS Advanced Technologies",
+    company_url: nil,
+    description: "I built microservices with Golang and MySQL and a responsive web application in React.",
+    highlights: [
+      "built an authentication system using modern cryptographic standards",
+      "helped decompose a Ruby monolith into Golang modules and microservices"
+    ],
+    start_date: "2023",
+    end_date: "2024",
+    position: 1
+  },
+  {
+    title: "Founding Software Engineer",
+    company: "Radom",
+    company_url: nil,
+    description: "Acted as the lead engineer and architected Web3 apps with Vue, React, Rust and the Solidity smart contract language.",
+    highlights: [
+      "developed a permission + role system in Solidity",
+      "implemented Solidity diamond pattern for complex Solidity payments contract"
+    ],
+    start_date: "2021",
+    end_date: "2023",
+    position: 2
+  },
+  {
+    title: "Software Engineer",
+    company: "Hoodoo",
+    company_url: nil,
+    description: "Worked on a small team building a custom cloud suite that manages Adobe AEM instances using Golang, Vue and Kubernetes.",
+    highlights: [
+      "built custom Github, Gitlab, and Bitbucket pipelines for CI/CI AEM deployment",
+      "built async CLI task running tool in Node.jS for local AEM development",
+      "built automated Adobe resource downloader tool"
+    ],
+    start_date: "2018",
+    end_date: "2021",
+    position: 3
+  },
+  {
+    title: "Software Engineer",
+    company: "Navitaire",
+    company_url: nil,
+    description: "Worked on a large team building features for an E-Commerce travel booking software in Angular, C#, and .NET.",
+    highlights: [
+      "improved Angular features by 50-75% by refactoring syncronous network requests into async requests",
+      "developed API testing suite using the Postman CLI and Powershell scripts"
+    ],
+    start_date: "2017",
+    end_date: "2018",
+    position: 4
+  }
+]
+
+cv_roles.each do |attrs|
+  role = CvRole.find_or_initialize_by(company: attrs[:company], title: attrs[:title])
+  role.assign_attributes(attrs)
+  role.save!
+end
+
+puts "Seeding CV education..."
+CvEducation.find_or_create_by!(
+  institution: "University of Utah",
+  degree: "Computer Science",
+  start_date: "2013",
+  end_date: "2018",
+  position: 0
+)
+
+puts "Seeded CV data: #{CvIntro.count} intro(s), #{CvRole.count} role(s), #{CvEducation.count} education(s)."
