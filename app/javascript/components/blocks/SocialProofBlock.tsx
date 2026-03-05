@@ -31,7 +31,7 @@ const techStack = [
 
 export default function SocialProofBlock() {
   return (
-    <div className="bg-white py-20 sm:py-28">
+    <div className="py-20 sm:py-28">
       <ContentWrapper>
         <div className="max-w-3xl mb-14">
           <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-3">
@@ -45,9 +45,9 @@ export default function SocialProofBlock() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {credibilityPoints.map((point) => (
-            <div key={point.label} className="border-t-2 border-blue-600 pt-4">
+            <div key={point.label} className="glass rounded-xl p-5 border-t-2 border-t-blue-500/60">
               <p className="text-3xl font-semibold text-gray-900 mb-1">{point.metric}</p>
               <p className="text-sm font-medium text-gray-900 mb-1">{point.label}</p>
               <p className="text-sm text-gray-500">{point.detail}</p>
@@ -55,13 +55,13 @@ export default function SocialProofBlock() {
           ))}
         </div>
 
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-8">
+        <div className="glass-strong rounded-xl p-8">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Technical Toolkit</h3>
           <div className="flex flex-wrap gap-2">
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-md"
+                className="glass px-3 py-1.5 text-sm font-medium text-gray-700 rounded-lg"
               >
                 {tech}
               </span>

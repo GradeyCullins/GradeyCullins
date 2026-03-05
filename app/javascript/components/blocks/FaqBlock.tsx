@@ -46,7 +46,7 @@ const faqs = [
 
 export default function FaqBlock() {
   return (
-    <div className="bg-gray-50 py-20 sm:py-28">
+    <div className="py-20 sm:py-28">
       <ContentWrapper>
         <div className="max-w-3xl mb-10">
           <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-3">
@@ -57,7 +57,7 @@ export default function FaqBlock() {
           </h2>
         </div>
 
-        <div className="max-w-3xl">
+        <div className="max-w-3xl glass-strong rounded-xl p-6 sm:p-8">
           <Accordion
             type="single"
             collapsible
@@ -65,7 +65,7 @@ export default function FaqBlock() {
             defaultValue="engagement-model"
           >
             {faqs.map((faq) => (
-              <AccordionItem key={faq.value} value={faq.value}>
+              <AccordionItem key={faq.value} value={faq.value} className="border-white/30">
                 <AccordionTrigger className="text-left text-base">
                   {faq.question}
                 </AccordionTrigger>

@@ -33,7 +33,7 @@ const steps = [
 
 export default function ProcessBlock() {
   return (
-    <div className="bg-gray-50 py-20 sm:py-28">
+    <div className="py-20 sm:py-28">
       <ContentWrapper>
         <div className="max-w-3xl mb-14">
           <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-3">
@@ -47,14 +47,14 @@ export default function ProcessBlock() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((item, index) => (
-            <div key={item.step} className="relative">
+            <div key={item.step} className="relative glass rounded-xl p-6">
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-6 left-full w-8 border-t border-dashed border-gray-300 z-10" />
+                <div className="hidden lg:block absolute top-8 -right-3 w-6 border-t border-dashed border-blue-400/40 z-10" />
               )}
               <div className="mb-3">
-                <span className="text-sm font-semibold text-blue-600">{item.step}</span>
+                <span className="glass-subtle inline-block px-2.5 py-1 rounded-md text-sm font-semibold text-blue-600">{item.step}</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h3>
               <p className="text-sm text-blue-600 font-medium mb-3">{item.duration}</p>

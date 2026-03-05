@@ -1,7 +1,12 @@
-import { createInertiaApp } from '@inertiajs/react'
+import { createInertiaApp, router } from '@inertiajs/react'
 import { createElement, ReactNode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Layout from "./layout.tsx";
+
+// Scroll to top on every Inertia page navigation
+router.on('navigate', () => {
+  window.scrollTo(0, 0)
+})
 
 // Temporary type definition, until @inertiajs/react provides one
 type ResolvedComponent = {

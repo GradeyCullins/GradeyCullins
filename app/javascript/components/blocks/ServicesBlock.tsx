@@ -65,7 +65,7 @@ const services = [
 
 export default function ServicesBlock() {
   return (
-    <div className="bg-gray-50 py-20 sm:py-28">
+    <div className="py-20 sm:py-28">
       <ContentWrapper>
         <div className="max-w-3xl mb-14">
           <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-3">
@@ -79,14 +79,14 @@ export default function ServicesBlock() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300"
+              className="glass rounded-xl p-8 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-md bg-blue-50 text-blue-600">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/10 text-blue-600 backdrop-blur-sm">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>

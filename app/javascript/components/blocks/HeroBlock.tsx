@@ -1,103 +1,53 @@
-import {Link, Head} from "@inertiajs/react";
-import gradeGrayImage from "../../assets/images/gradey-gray.webp";
+import {Head, Link} from "@inertiajs/react";
+import gradeyPixellated from "../../assets/images/gradey-pixellated-animation.webp";
 import GradientButton from "../GradientButton.tsx";
+import ChatWidget from "../ChatWidget.tsx";
 
 export default function HeroBlock() {
   return (
     <>
       <Head>
-        <link rel="preload" as="image" href={gradeGrayImage} fetchPriority="high"/>
+        <link rel="preload" as="image" href={gradeyPixellated} fetchPriority="high"/>
       </Head>
-      <div className="min-h-[calc(100vh-80px)] bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-80px)]">
+      <div className="min-h-[calc(100vh-100px)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] text-center py-20">
 
-            <div className="flex flex-col justify-center py-16 lg:py-20">
-              <div className="space-y-6">
-                <p className="text-sm font-medium tracking-widest uppercase text-blue-600">
-                  AI Engineering & Strategic Consulting
-                </p>
-                <div className="space-y-2">
-                  <h1
-                    className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight tracking-tight">
-                    Turn AI into your
-                  </h1>
-                  <h2
-                    className="text-4xl sm:text-5xl lg:text-6xl text-gray-600 italic leading-tight tracking-tight">
-                    competitive advantage
-                  </h2>
-                </div>
-
-                <div className="max-w-lg space-y-6">
-                  <div className="border-l-2 border-gray-300 pl-6">
-                    <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed">
-                      I help B2B software companies ship production-grade AI features&mdash;faster, with less risk, and without building a machine learning team from scratch.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3 text-base text-gray-600">
-                    <p className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 shrink-0"></span>
-                      LLM-powered products that drive measurable revenue
-                    </p>
-                    <p className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 shrink-0"></span>
-                      End-to-end: strategy, architecture, deployment
-                    </p>
-                    <p className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 shrink-0"></span>
-                      Senior-level execution, zero ramp-up time
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-start gap-4 pt-6">
-                  <Link href="/contact">
-                    <GradientButton>
-                      Book a free consultation
-                      <svg className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
-                           fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
-                      </svg>
-                    </GradientButton>
-                  </Link>
-                </div>
-
-                <div>
-                  <p className="text-sm text-gray-500">
-                    AI Product Development &middot; LLM Integration &middot; Technical Architecture &middot; AI Strategy
-                  </p>
-                </div>
-              </div>
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden glass-strong shadow-xl shadow-blue-500/10 mb-8">
+              <img
+                src={gradeyPixellated}
+                alt="Gradey Cullins"
+                className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
+                width="128"
+                height="128"
+              />
             </div>
 
-            <div className="flex items-center justify-center lg:justify-end py-8 lg:py-20">
-              <div className="relative">
-                <div
-                  className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden bg-white shadow-2xl">
-                  <img
-                    src={gradeGrayImage}
-                    alt="Gradey Cullins - AI Engineer & Consultant"
-                    className="w-full h-full object-cover rounded-lg"
-                    loading="eager"
-                    fetchPriority="high"
-                    width="384"
-                    height="384"
-                    sizes="(max-width: 640px) 288px, (max-width: 768px) 320px, 384px"
-                    decoding="async"
-                  />
-                </div>
-                <div
-                  className="absolute -bottom-3 -right-3 bg-white px-3 py-2 rounded-sm shadow-md border">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <p className="text-sm font-medium text-gray-700">
-                      accepting new clients
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 mb-3">
+              "Gradey is an AI-augmented super developer."<br/>
+            </h1>
+            <span className="text-xl text-slate-500 md:pl-12">– some guy somewhere, probably</span>
+
+            <div className="w-full max-w-lg my-8">
+              <ChatWidget
+                agent="website"
+                placeholder="Ask about my services, experience, or how I can help..."
+                greeting="Hey! I'm a chat agent specfically tailored to talk about Gradey's website. Try asking questions like 'what's this website built with?'"
+              />
             </div>
+
+            <Link href="/contact">
+              <GradientButton>
+                Send Me a Message
+                <svg className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                </svg>
+              </GradientButton>
+            </Link>
+
           </div>
         </div>
       </div>

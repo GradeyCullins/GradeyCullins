@@ -7,7 +7,7 @@ type LayoutProps = {
 
 export default function Layout({children}: LayoutProps) {
   return (
-    <main>
+    <main className="mesh-bg min-h-screen">
       <Header/>
       <article>
         {children}
