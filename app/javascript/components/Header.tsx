@@ -60,7 +60,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 pt-4 px-4 sm:px-6 lg:px-8 pointer-events-none">
       <div className="pointer-events-auto">
-      <div className="glass-strong w-fit mx-auto rounded-2xl shadow-lg shadow-black/5">
+      <div className="glass-strong min-w-[600px] sm:min-w-[700px] w-fit mx-auto rounded-2xl shadow-lg shadow-black/5" style={{backdropFilter: "blur(40px)", WebkitBackdropFilter: "blur(40px)"}}>
         <div className="px-4 sm:px-6 py-3">
           <div className="flex items-center gap-8">
             

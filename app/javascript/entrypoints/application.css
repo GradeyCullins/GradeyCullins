@@ -77,9 +77,9 @@ input, textarea {
 
 @keyframes sparkle-drift {
   0% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0);
   }
   100% {
-    transform: translate(var(--drift-x), var(--drift-y)) rotate(180deg);
+    transform: translate(var(--drift-x), var(--drift-y));
   }
 }

@@ -12,8 +12,9 @@ export default function HeroBlock() {
       <div className="min-h-[calc(100vh-100px)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] text-center py-20">
-
-            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden glass-strong shadow-xl shadow-blue-500/10 mb-8">
+            
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden glass-strong shadow-xl shadow-blue-500/10 mb-5">
+              
               <img
                 src={gradeyPixellated}
                 alt="Gradey Cullins"
@@ -24,17 +25,16 @@ export default function HeroBlock() {
                 height="128"
               />
             </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 mb-3">
-              "Gradey is an AI-augmented super developer."<br/>
-            </h1>
-            <span className="text-xl text-slate-500 md:pl-12">– some guy somewhere, probably</span>
+            
+            <div>
+              <h1 className="text-4xl font-bold">Now Specializing In AI Integrations.</h1>
+            </div>
 
             <div className="w-full max-w-lg my-8">
               <ChatWidget
                 agent="website"
                 placeholder="Ask about my services, experience, or how I can help..."
-                greeting="Hey! I'm a chat agent specfically tailored to talk about Gradey's website. Try asking questions like 'what's this website built with?'"
+                greeting="Hey! Try chatting with me..."
               />
             </div>
 

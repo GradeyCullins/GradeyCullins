@@ -19,8 +19,9 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting}: Omit<C
   const [input, setInput] = useState("")
   const [chatId, setChatId] = useState<number | null>(null)
   const [loading, setLoading] = useState(false)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
+  const [rateLimited, setRateLimited] = useState(false)
+  const messagesEndRef = useRef<HTMLDivElement | null>(null)
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
   async function ensureChat(): Promise<number> {
     if (chatId) return chatId
@@ -52,6 +53,13 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting}: Omit<C
         body: JSON.stringify({content, agent}),
       })
       const data = await res.json()
+
+      if (res.status === 429) {
+        setMessages(prev => [...prev, {role: "assistant", content: data.content}])
+        setRateLimited(true)
+        return
+      }
+
       setMessages(prev => [...prev, {role: "assistant", content: data.content}])
     } catch {
       setMessages(prev => [
@@ -81,7 +89,7 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting}: Omit<C
             <div
               className={`max-w-[80%] px-3.5 py-2 rounded-2xl text-sm leading-relaxed ${
                 msg.role === "user"
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-br-md"
+                  ? "bg-emerald-600 text-white rounded-br-md"
                   : "glass text-gray-700 rounded-bl-md"
               }`}
             >
@@ -104,26 +112,32 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting}: Omit<C
       </div>
 
       {/* Input */}
-      <form onSubmit={handleSubmit} className="border-t border-white/30 p-3 flex gap-2">
-        <input
-          ref={inputRef}
-          type="text"
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          placeholder={placeholder}
-          disabled={loading}
-          className="flex-1 bg-white/50 border border-white/40 rounded-full px-4 py-2 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500/30 disabled:opacity-50"
-        />
-        <button
-          type="submit"
-          disabled={loading || !input.trim()}
-          className="w-12 flex justify-center items-center cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full p-2 hover:from-blue-700 hover:to-purple-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
-          </svg>
-        </button>
-      </form>
+      {rateLimited ? (
+        <div className="border-t border-white/30 p-3 text-center text-sm text-gray-400">
+          Message limit reached
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="border-t border-white/30 p-3 flex gap-2">
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            placeholder={placeholder}
+            disabled={loading}
+            className="flex-1 bg-white/50 border border-white/40 rounded-full px-4 py-2 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500/30 disabled:opacity-50"
+          />
+          <button
+            type="submit"
+            disabled={loading || !input.trim()}
+            className="w-12 flex justify-center items-center cursor-pointer bg-emerald-600 text-white rounded-full p-2 hover:bg-emerald-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+            </svg>
+          </button>
+        </form>
+      )}
     </div>
   )
 }
@@ -160,7 +174,7 @@ export default function ChatWidget({floating, ...props}: ChatWidgetProps) {
 
       <button
         onClick={() => setOpen(prev => !prev)}
-        className="cursor-pointer w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center"
+        className="cursor-pointer w-14 h-14 rounded-full bg-emerald-600 text-white shadow-lg hover:shadow-xl hover:bg-emerald-700 transition-all duration-200 flex items-center justify-center"
         aria-label={open ? "Close chat" : "Open chat"}
       >
         {open ? (

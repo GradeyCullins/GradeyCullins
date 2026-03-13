@@ -1,4 +1,4 @@
-import {useForm, Head} from "@inertiajs/react"
+import {Head, useForm} from "@inertiajs/react"
 import {FormEvent} from "react"
 import GradientButton from "../components/GradientButton.tsx"
 
@@ -30,25 +30,15 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
     <>
       <Head title="Contact - Gradey Cullins"/>
       
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           
           <div className="mb-16">
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 leading-tight tracking-tight">
-                Let's build something
+            <div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 mb-3">
+                Drop a Line.
               </h1>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight tracking-tight">
-                remarkable together
-              </h2>
-            </div>
-            
-            <div className="mt-12 max-w-2xl">
-              <div className="border-l-2 border-gray-300 pl-6">
-                <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed">
-                  Ready to bring your vision to life? I'd love to hear about your project and explore how we can work together.
-                </p>
-              </div>
+              <p>Want to discuss a project? Want to ask more questions? Or just want to say hello? Send me a message.</p>
             </div>
           </div>
 
@@ -98,8 +88,7 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
                   id="message-input" 
                   rows={8} 
                   value={data.message}
-                  placeholder="Tell me about your project. What are you looking to build? What are your goals, timeline, and budget?"
-                  onChange={(e) => setData('message', e.target.value)} 
+                  onChange={(e) => setData('message', e.target.value)}
                   required
                   className="gradient-focus w-full px-4 py-3 text-base border border-gray-300 rounded-sm bg-white placeholder-gray-500 resize-none transition-all duration-200"
                 />
@@ -118,44 +107,6 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
                 </GradientButton>
               </div>
             </form>
-          </div>
-
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center space-y-4">
-              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-gray-900">Quick Response</h4>
-              <p className="text-gray-600">
-                Usually respond within 24 hours
-              </p>
-            </div>
-            
-            <div className="text-center space-y-4">
-              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-gray-900">Direct Contact</h4>
-              <p className="text-gray-600">
-                Straight to me, no middlemen
-              </p>
-            </div>
-            
-            <div className="text-center space-y-4">
-              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-gray-900">Ready to Start</h4>
-              <p className="text-gray-600">
-                Available for immediate projects
-              </p>
-            </div>
           </div>
 
           <div className="mt-16 text-center">
