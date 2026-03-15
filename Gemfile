@@ -77,4 +77,4 @@ gem "vite_rails", "~> 3.0"
 gem "ruby_llm"
 
 gem "prawn", "~> 2.5"
-gem "prawn-svg", "~> 0.34"
+gem "prawn-svg", "~> 0.39"
