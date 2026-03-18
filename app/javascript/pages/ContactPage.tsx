@@ -4,13 +4,18 @@ import GradientButton from "../components/GradientButton.tsx"
 
 interface ContactPageProps {
   lets_build?: string
+  success_message?: string
+  error_message?: string
+  initial_name?: string
+  initial_email?: string
+  initial_message?: string
 }
 
-export default function ContactPage({ lets_build }: ContactPageProps) {
+export default function ContactPage({ lets_build, success_message, error_message, initial_name = '', initial_email = '', initial_message = '' }: ContactPageProps) {
   const {data, setData, post, processing} = useForm({
-    name: import.meta.env.DEV ? 'Gradey Cullins' : '',
-    email: import.meta.env.DEV ? 'gradeycullins@gmail.com' : '',
-    message: lets_build ? `Let's build ${lets_build}` : '',
+    name: initial_name || (import.meta.env.DEV ? 'Gradey Cullins' : ''),
+    email: initial_email || (import.meta.env.DEV ? 'gradeycullins@gmail.com' : ''),
+    message: initial_message || (lets_build ? `Let's build ${lets_build}` : ''),
   })
   
   function submit(e: FormEvent) {
@@ -38,12 +43,24 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 mb-3">
                 Drop a Line.
               </h1>
-              <p>Want to discuss a project? Want to ask more questions? Or just want to say hello? Send me a message.</p>
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-8 lg:p-12 border border-gray-200">
+          <div className="bg-white rounded-lg p-8 lg:p-12 border border-gray-200">
+            <h3 className="text-xl font-semibold mb-8">Contact Me</h3>
+            
             <form onSubmit={submit} className="space-y-8">
+              {success_message && (
+                <div className="rounded-sm border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+                  {success_message}
+                </div>
+              )}
+
+              {error_message && (
+                <div className="rounded-sm border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                  {error_message}
+                </div>
+              )}
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -58,7 +75,7 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
                     placeholder="Your name"
                     onChange={(e) => setData('name', e.target.value)} 
                     required 
-                    className="gradient-focus w-full px-4 py-3 text-base border border-gray-300 rounded-sm bg-white placeholder-gray-500 transition-all duration-200"
+                    className="gradient-focus w-full px-4 py-3 text-base border border-gray-300 rounded-sm bg-gray-50 placeholder-gray-500 transition-all duration-200"
                   />
                 </div>
                 
@@ -74,7 +91,7 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
                     placeholder="your@email.com"
                     onChange={(e) => setData('email', e.target.value)} 
                     required 
-                    className="gradient-focus w-full px-4 py-3 text-base border border-gray-300 rounded-sm bg-white placeholder-gray-500 transition-all duration-200"
+                    className="gradient-focus w-full px-4 py-3 text-base border border-gray-300 rounded-sm bg-gray-50 placeholder-gray-500 transition-all duration-200"
                   />
                 </div>
               </div>
@@ -90,7 +107,7 @@ export default function ContactPage({ lets_build }: ContactPageProps) {
                   value={data.message}
                   onChange={(e) => setData('message', e.target.value)}
                   required
-                  className="gradient-focus w-full px-4 py-3 text-base border border-gray-300 rounded-sm bg-white placeholder-gray-500 resize-none transition-all duration-200"
+                  className="gradient-focus w-full px-4 py-3 text-base border border-gray-300 rounded-sm bg-gray-50 placeholder-gray-500 resize-none transition-all duration-200"
                 />
               </div>
               

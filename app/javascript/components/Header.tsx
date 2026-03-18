@@ -58,15 +58,15 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 pt-4 px-4 sm:px-6 lg:px-8 pointer-events-none">
+    <header className="sticky top-0 z-50 pt-3 sm:pt-4 px-3 sm:px-6 lg:px-8 pointer-events-none">
       <div className="pointer-events-auto">
-      <div className="glass-strong min-w-[600px] sm:min-w-[700px] w-fit mx-auto rounded-2xl shadow-lg shadow-black/5" style={{backdropFilter: "blur(40px)", WebkitBackdropFilter: "blur(40px)"}}>
-        <div className="px-4 sm:px-6 py-3">
-          <div className="flex items-center gap-8">
+      <div className="glass-strong w-full max-w-5xl mx-auto rounded-2xl shadow-lg shadow-black/5" style={{backdropFilter: "blur(40px)", WebkitBackdropFilter: "blur(40px)"}}>
+        <div className="px-3 sm:px-6 py-3">
+          <div className="flex items-center justify-between gap-4 sm:gap-8">
             
             <Link href="/" className="group">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-sm overflow-hidden group-hover:opacity-80 transition-opacity">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 shrink-0 rounded-sm overflow-hidden group-hover:opacity-80 transition-opacity">
                   <img 
                     src="/icon.svg" 
                     alt="GC Logo" 
@@ -75,11 +75,11 @@ export default function Header() {
                     height="40"
                   />
                 </div>
-                <div className="block">
-                  <div className="text-lg font-semibold text-gray-900 tracking-tight">
+                <div className="min-w-0">
+                  <div className="truncate text-base sm:text-lg font-semibold text-gray-900 tracking-tight">
                     Gradey Cullins
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="hidden sm:block text-sm text-gray-600">
                     Computer Programmer
                   </div>
                 </div>
@@ -126,7 +126,8 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 text-gray-600 rounded-lg"
+              className="md:hidden shrink-0 p-2 text-gray-600 rounded-lg"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               <svg className={`w-6 h-6 transition-transform duration-300 ${isMenuOpen ? 'rotate-90' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
@@ -145,7 +146,7 @@ export default function Header() {
             <div className="mt-4 pb-4 border-t border-white/30">
               <div className="pt-4 space-y-1">
                 <MobileHeaderLink href="/" onClick={closeMenu}>Home</MobileHeaderLink>
-                <MobileHeaderLink href="/about" onClick={closeMenu}>About</MobileHeaderLink>
+                <MobileHeaderLink href="/cv" onClick={closeMenu}>CV</MobileHeaderLink>
                 
                 <div className="pt-4">
                   <Link 

@@ -154,9 +154,9 @@ export default function ChatWidget({floating, ...props}: ChatWidgetProps) {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       {open && (
-        <div className="glass-strong w-[360px] max-w-[calc(100vw-3rem)] rounded-2xl shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-200">
+        <div className="glass-strong w-[min(360px,calc(100vw-2rem))] rounded-2xl shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-200">
           <div className="flex items-center justify-between px-4 py-3 border-b border-white/20">
             <span className="text-sm font-semibold text-gray-700">Chat with my resume</span>
             <button

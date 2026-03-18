@@ -37,4 +37,27 @@ class SiteVisitTest < ActiveSupport::TestCase
     assert_equal 1, SiteVisit.find_by(ip_address: "10.0.0.4").view_count
     assert_equal 1, SiteVisit.find_by(ip_address: "10.0.0.5").view_count
   end
+
+  test "record_contact_email! increments the contact email count" do
+    visit = SiteVisit.record_contact_email!("10.0.0.6")
+
+    assert_equal 1, visit.contact_email_count
+    assert_equal 1, visit.view_count
+    assert_not_nil visit.first_visited_at
+    assert_not_nil visit.last_visited_at
+  end
+
+  test "contact_email_allowed? returns false after five emails" do
+    5.times { SiteVisit.record_contact_email!("10.0.0.7") }
+
+    assert_not SiteVisit.contact_email_allowed?("10.0.0.7")
+  end
+
+  test "record_contact_email! raises after five emails" do
+    5.times { SiteVisit.record_contact_email!("10.0.0.8") }
+
+    assert_raises(SiteVisit::ContactEmailLimitReached) do
+      SiteVisit.record_contact_email!("10.0.0.8")
+    end
+  end
 end

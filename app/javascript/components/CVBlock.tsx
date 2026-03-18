@@ -15,11 +15,11 @@ export default function CVBlock({intro, roles, educations}: CVBlockProps) {
   return (
     <WideBlockSection>
       <ContentWrapper>
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="font-bold text-4xl">Curriculum Vitae</h1>
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <h1 className="font-bold text-3xl sm:text-4xl">Curriculum Vitae</h1>
           <a
             href="/cv/download"
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-emerald-600 rounded-full hover:bg-emerald-700 transition-all duration-200 shadow-sm"
+            className="inline-flex w-full items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-emerald-600 rounded-full hover:bg-emerald-700 transition-all duration-200 shadow-sm sm:w-auto"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -30,9 +30,9 @@ export default function CVBlock({intro, roles, educations}: CVBlockProps) {
 
         <hr className="mb-6" />
 
-        <div className="max-w-[1200px] rounded-md">
+        <div className="max-w-[1200px] rounded-md pr-4 sm:pr-0">
           {intro && (
-            <div className="mb-6 flex items-center gap-3">
+            <div className="mb-6 flex flex-wrap items-center gap-3">
               <a href={intro.linkedinUrl} target="_blank" rel="noreferrer" title="LinkedIn">
                 <img src={LinkedInIcon} alt="LinkedIn" className="w-5 h-5 opacity-60 hover:opacity-100 transition-opacity" />
               </a>

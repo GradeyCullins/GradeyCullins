@@ -1,29 +1,29 @@
 @reference "../../entrypoints/application.css";
 
 h2 {
-  @apply text-3xl font-bold mb-4;
+  @apply text-2xl sm:text-3xl font-bold mb-4;
 }
 
 .about-section {
-  @apply flex flex-wrap-reverse justify-between mb-4;
+  @apply flex flex-col-reverse gap-2 mb-5 sm:flex-wrap-reverse sm:flex-row sm:justify-between;
 
   h3 {
-    @apply text-xl font-semibold mb-2;
+    @apply text-lg sm:text-xl font-semibold mb-2;
   }
-  div:first-of-type {
-    @apply md:w-3/4;
 
+  div:first-of-type {
+    @apply w-full md:w-3/4;
   }
 
   p.when {
-    @apply text-slate-500;
+    @apply text-sm sm:text-base text-slate-500;
   }
 
   p {
-    @apply mb-2;
+    @apply mb-2 text-base leading-7;
   }
 
   ul {
-    @apply list-disc list-inside;
+    @apply list-disc list-inside space-y-1;
   }
 }

@@ -1,17 +1,18 @@
-# Name of your application. Used to uniquely configure containers.
 service: gradeycullins_com
 
-# Name of the container image.
 image: gradeycullins/gradeycullins_com
+
+#proxy:
+#  host: false
 
 servers:
   web:
+    proxy: false
     hosts:
-      - 5.78.189.171
-
-proxy:
-  ssl: true
-  host: gradeycullins.com
+      - 10.0.0.199
+    options:
+      publish:
+        - "9090:80"
 
 # Credentials for your image host.
 registry:
@@ -27,6 +28,9 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - ANTHROPIC_API_KEY
   clear:
     SOLID_QUEUE_IN_PUMA: true
     # RAILS_LOG_LEVEL: debug
@@ -50,7 +54,8 @@ asset_path: /rails/public/assets
 
 builder:
   arch: amd64
-  remote: ssh://gb@5.78.189.171
+  remote: ssh://gb@10.0.0.199:2222
 
 ssh:
    user: gb
+   port: "2222"
