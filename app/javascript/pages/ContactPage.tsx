@@ -86,7 +86,7 @@ export default function ContactPage({
       <Head title="Contact - Gradey Cullins" />
 
       <div className="min-h-screen bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-6xl px-4 pb-14 pt-36 sm:px-6 lg:px-8 lg:pb-20 lg:pt-40">
           <div className="mb-10 max-w-3xl">
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-gray-500">
               Service Request

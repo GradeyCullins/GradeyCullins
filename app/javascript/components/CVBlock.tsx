@@ -1,5 +1,4 @@
 import WideBlockSection from "./WideBlockSection.tsx";
-import ContentWrapper from "./ContentWrapper.tsx";
 import {CvIntro, CvRole, CvEducation} from "../types.ts";
 import LinkedInIcon from "/assets/icons/linked-in.svg"
 import GitHubIcon from "/assets/icons/github.svg"
@@ -14,8 +13,8 @@ interface CVBlockProps {
 export default function CVBlock({intro, roles, educations}: CVBlockProps) {
   return (
     <WideBlockSection>
-      <ContentWrapper>
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="w-full px-4 sm:px-5 lg:px-8">
+        <div className="mb-6 flex flex-col gap-4 pr-4 sm:flex-row sm:items-center sm:justify-between sm:pr-0">
           <h1 className="font-bold text-3xl sm:text-4xl">Curriculum Vitae</h1>
           <a
             href="/cv/download"
@@ -30,7 +29,7 @@ export default function CVBlock({intro, roles, educations}: CVBlockProps) {
 
         <hr className="mb-6" />
 
-        <div className="max-w-[1200px] rounded-md pr-4 sm:pr-0">
+        <div className="rounded-md pr-4 sm:pr-0">
           {intro && (
             <div className="mb-6 flex flex-wrap items-center gap-3">
               <a href={intro.linkedinUrl} target="_blank" rel="noreferrer" title="LinkedIn">
@@ -109,7 +108,7 @@ export default function CVBlock({intro, roles, educations}: CVBlockProps) {
             </>
           )}
         </div>
-      </ContentWrapper>
+      </div>
     </WideBlockSection>
   )
 }

@@ -1,6 +1,5 @@
-import {Head, Link} from "@inertiajs/react";
+import {Head} from "@inertiajs/react";
 import gradeyPixellated from "../../assets/images/gradey-pixellated-animation.webp";
-import GradientButton from "../GradientButton.tsx";
 import ChatWidget from "../ChatWidget.tsx";
 
 export default function HeroBlock() {
@@ -42,16 +41,6 @@ export default function HeroBlock() {
                 ]}
               />
             </div>
-
-            <Link href="/contact">
-              <GradientButton>
-                Send Me a Message
-                <svg className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
-                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
-                </svg>
-              </GradientButton>
-            </Link>
 
           </div>
         </div>

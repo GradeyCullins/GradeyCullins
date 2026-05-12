@@ -1,4 +1,4 @@
-import {Link} from "@inertiajs/react"
+import {Link, usePage} from "@inertiajs/react"
 import {ReactNode, useState} from "react"
 import XIcon from '/assets/icons/x.svg'
 import GithubIcon from '/assets/icons/github.svg'
@@ -8,27 +8,32 @@ import LinkedinIcon from '/assets/icons/linked-in.svg'
 type HeaderLinkProps = {
   children: ReactNode
   href: string
+  active?: boolean
   onClick?: () => void
 }
 
-function HeaderLink({children, href, onClick}: HeaderLinkProps) {
+function HeaderLink({children, href, active = false, onClick}: HeaderLinkProps) {
   return (
-    <Link 
-      href={href} 
+    <Link
+      href={href}
       onClick={onClick}
-      className="text-gray-700 px-3 py-2 text-sm font-medium rounded-lg"
+      className={`rounded-md border-b-2 px-2 py-1 text-sm font-black uppercase tracking-[0.18em] text-gray-950 transition-colors hover:border-gray-950 ${
+        active ? 'border-gray-950 bg-gray-950 text-white' : 'border-transparent'
+      }`}
     >
       {children}
     </Link>
   )
 }
 
-function MobileHeaderLink({children, href, onClick}: HeaderLinkProps) {
+function MobileHeaderLink({children, href, active = false, onClick}: HeaderLinkProps) {
   return (
-    <Link 
-      href={href} 
+    <Link
+      href={href}
       onClick={onClick}
-      className="block text-gray-700 px-3 py-2 text-base font-medium rounded-lg"
+      className={`block rounded-md border-b-4 border-gray-950 px-3 pb-2 text-right text-5xl font-black uppercase leading-none tracking-normal transition-colors hover:text-gray-600 sm:text-6xl ${
+        active ? 'bg-gray-950 text-white' : 'text-gray-950'
+      }`}
     >
       {children}
     </Link>
@@ -37,17 +42,20 @@ function MobileHeaderLink({children, href, onClick}: HeaderLinkProps) {
 
 function SocialLink({href, icon, alt}: {href: string, icon: string, alt: string}) {
   return (
-    <a 
+    <a
       href={href}
-      className="p-2 text-gray-500 rounded-lg shadow-none"
+      className="flex h-10 w-10 items-center justify-center rounded-md border-2 border-transparent transition-colors hover:border-gray-950"
     >
-      <img src={icon} width={18} height={18} alt={alt} className="opacity-70 hover:opacity-100 transition-opacity"/>
+      <img src={icon} width={18} height={18} alt={alt} className="opacity-80 transition-opacity hover:opacity-100"/>
     </a>
   )
 }
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const {url} = usePage()
+  const currentPath = url.split('?')[0]
+  const isActive = (href: string) => href === '/' ? currentPath === '/' : currentPath === href || currentPath.startsWith(`${href}/`)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -58,130 +66,103 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 pt-3 sm:pt-4 px-3 sm:px-6 lg:px-8 pointer-events-none">
-      <div className="pointer-events-auto">
-      <div className="glass-strong w-full max-w-5xl mx-auto rounded-2xl shadow-lg shadow-black/5" style={{backdropFilter: "blur(40px)", WebkitBackdropFilter: "blur(40px)"}}>
-        <div className="px-3 sm:px-6 py-3">
-          <div className="flex items-center justify-between gap-4 sm:gap-8">
-            
-            <Link href="/" className="group">
-              <div className="flex items-center gap-3 min-w-0">
-                <div className="w-10 h-10 shrink-0 rounded-sm overflow-hidden group-hover:opacity-80 transition-opacity">
-                  <img 
-                    src="/icon.svg" 
-                    alt="GC Logo" 
-                    className="w-full h-full object-cover"
-                    width="40"
-                    height="40"
-                  />
-                </div>
-                <div className="min-w-0">
-                  <div className="truncate text-base sm:text-lg font-semibold text-gray-900 tracking-tight">
-                    Gradey Cullins
-                  </div>
-                  <div className="hidden sm:block text-sm text-gray-600">
-                    Computer Programmer
-                  </div>
-                </div>
-              </div>
-            </Link>
-            
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1">
-              <div className="flex gap-1">
-                <HeaderLink href="/">Home</HeaderLink>
-                <HeaderLink href="/cv">CV</HeaderLink>
-              </div>
-              
-              <div className="w-px h-4 bg-gray-300/50 mx-3"></div>
-              
-              <Link
-                href="/contact"
-                className="bg-gray-900/90 backdrop-blur-sm text-white px-4 py-2 text-sm font-medium rounded-full"
-              >
-                Contact
-              </Link>
-              
-              <div className="w-px h-4 bg-gray-300/50 mx-3"></div>
-              
-              <div className="flex gap-1">
-                <SocialLink
-                  href="https://x.com/gradeyboland"
-                  icon={XIcon}
-                  alt="X (Twitter)"
-                />
-                <SocialLink
-                  href="https://github.com/gradeycullins"
-                  icon={GithubIcon}
-                  alt="GitHub"
-                />
-                <SocialLink
-                  href="https://www.linkedin.com/in/gradey-cullins-738b2045/"
-                  icon={LinkedinIcon}
-                  alt="Email"
-                />
-              </div>
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleMenu}
-              className="md:hidden shrink-0 p-2 text-gray-600 rounded-lg"
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            >
-              <svg className={`w-6 h-6 transition-transform duration-300 ${isMenuOpen ? 'rotate-90' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+    <header className="absolute inset-x-0 top-0 z-50 pointer-events-none">
+      <Link href="/" className="group pointer-events-auto absolute left-3 top-3 z-20 sm:left-5 sm:top-5">
+        <div className="flex items-start gap-3">
+          <div className="h-11 w-11 shrink-0 overflow-hidden rounded-md bg-white transition-transform group-hover:-rotate-3">
+            <img
+              src="/icon.svg"
+              alt="GC Logo"
+              className="h-full w-full object-cover"
+              width="44"
+              height="44"
+            />
           </div>
-
-          {/* Mobile Navigation */}
-          <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-          }`}>
-            <div className="mt-4 pb-4 border-t border-white/30">
-              <div className="pt-4 space-y-1">
-                <MobileHeaderLink href="/" onClick={closeMenu}>Home</MobileHeaderLink>
-                <MobileHeaderLink href="/cv" onClick={closeMenu}>CV</MobileHeaderLink>
-                
-                <div className="pt-4">
-                  <Link 
-                    href="/contact"
-                    onClick={closeMenu}
-                    className="block bg-gray-900/90 backdrop-blur-sm text-white px-3 py-2 text-base font-medium rounded-full shadow-none w-fit"
-                  >
-                    Contact
-                  </Link>
-                </div>
-                
-                <div className="pt-4">
-                  <div className="flex gap-2">
-                    <SocialLink 
-                      href="https://x.com/gradeyboland" 
-                      icon={XIcon} 
-                      alt="X (Twitter)"
-                    />
-                    <SocialLink 
-                      href="https://github.com/gradeycullins" 
-                      icon={GithubIcon} 
-                      alt="GitHub"
-                    />
-                    <SocialLink 
-                      href="mailto:gradeycullins@gmail.com" 
-                      icon={GmailIcon} 
-                      alt="Email"
-                    />
-                  </div>
-                </div>
-              </div>
+          <div className="hidden pt-0.5 leading-none sm:block">
+            <div className="text-xl font-black uppercase tracking-normal text-gray-950">
+              Gradey
+            </div>
+            <div className="text-xl font-black uppercase tracking-normal text-gray-950">
+              Cullins
+            </div>
+            <div className="mt-1 w-fit border-t-2 border-gray-950 pt-1 text-[10px] font-black uppercase tracking-[0.2em] text-gray-700">
+              Programmer
             </div>
           </div>
         </div>
-      </div>
+      </Link>
+
+      <nav className="pointer-events-auto absolute right-3 top-3 z-20 hidden items-center gap-4 sm:right-5 sm:top-5 md:flex">
+        <HeaderLink href="/" active={isActive('/')}>Home</HeaderLink>
+        <HeaderLink href="/cv" active={isActive('/cv')}>CV</HeaderLink>
+        <Link
+          href="/contact"
+          className={`rounded-md border-2 border-gray-950 px-3 py-2 text-sm font-black uppercase tracking-[0.18em] transition-colors hover:bg-gray-950 hover:text-white ${
+            isActive('/contact') ? 'bg-gray-950 text-white' : 'text-gray-950'
+          }`}
+        >
+          Contact
+        </Link>
+        <div className="flex items-center gap-1">
+          <SocialLink
+            href="https://x.com/gradeyboland"
+            icon={XIcon}
+            alt="X (Twitter)"
+          />
+          <SocialLink
+            href="https://github.com/gradeycullins"
+            icon={GithubIcon}
+            alt="GitHub"
+          />
+          <SocialLink
+            href="https://www.linkedin.com/in/gradey-cullins-738b2045/"
+            icon={LinkedinIcon}
+            alt="LinkedIn"
+          />
+        </div>
+      </nav>
+
+      <button
+        onClick={toggleMenu}
+        className="pointer-events-auto absolute right-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-md border-2 border-gray-950 bg-gray-50 text-gray-950 md:hidden"
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={isMenuOpen}
+      >
+        <svg className={`h-6 w-6 transition-transform duration-200 ${isMenuOpen ? 'rotate-90' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {isMenuOpen ? (
+            <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2.5} d="M4 7h16M4 12h16M4 17h16" />
+          )}
+        </svg>
+      </button>
+
+      <div className={`pointer-events-auto absolute inset-x-0 top-0 z-10 min-h-screen bg-gray-50 px-4 pb-6 pt-24 transition-all duration-200 md:hidden ${
+        isMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'
+      }`}>
+        <nav className="ml-auto flex max-w-sm flex-col items-stretch gap-5">
+          <MobileHeaderLink href="/" active={isActive('/')} onClick={closeMenu}>Home</MobileHeaderLink>
+          <MobileHeaderLink href="/cv" active={isActive('/cv')} onClick={closeMenu}>CV</MobileHeaderLink>
+          <MobileHeaderLink href="/contact" active={isActive('/contact')} onClick={closeMenu}>Contact</MobileHeaderLink>
+        </nav>
+
+        <div className="absolute bottom-4 right-4 flex gap-2">
+          <SocialLink
+            href="https://x.com/gradeyboland"
+            icon={XIcon}
+            alt="X (Twitter)"
+          />
+          <SocialLink
+            href="https://github.com/gradeycullins"
+            icon={GithubIcon}
+            alt="GitHub"
+          />
+          <SocialLink
+            href="mailto:gradeycullins@gmail.com"
+            icon={GmailIcon}
+            alt="Email"
+          />
+        </div>
       </div>
     </header>
   )

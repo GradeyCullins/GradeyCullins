@@ -14,7 +14,7 @@ export default function CVPage({intro, roles, educations}: CVPageProps) {
   return (
     <>
       <Head title="Gradey Cullins - CV"/>
-      <div className="pb-24 sm:pb-12">
+      <div className="pb-24 pt-24 sm:pb-12 sm:pt-32">
         <CVBlock intro={intro} roles={roles} educations={educations} />
       </div>
 
