@@ -23,6 +23,7 @@ export default function CVPage({intro, roles, educations}: CVPageProps) {
         placeholder="Ask about my experience, skills, roles..."
         greeting="Hi! I can answer questions about Gradey's career, technical skills, and professional experience. What would you like to know?"
         floating
+        opaque
       />
     </>
   )

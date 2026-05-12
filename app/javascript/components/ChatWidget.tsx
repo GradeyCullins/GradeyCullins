@@ -10,6 +10,7 @@ interface ChatWidgetProps {
   placeholder?: string
   greeting?: string
   floating?: boolean
+  opaque?: boolean
 }
 
 function ChatPanel({agent, placeholder = "Ask me anything...", greeting}: Omit<ChatWidgetProps, "floating">) {
@@ -142,7 +143,7 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting}: Omit<C
   )
 }
 
-export default function ChatWidget({floating, ...props}: ChatWidgetProps) {
+export default function ChatWidget({floating, opaque, ...props}: ChatWidgetProps) {
   const [open, setOpen] = useState(false)
 
   if (!floating) {
@@ -156,7 +157,7 @@ export default function ChatWidget({floating, ...props}: ChatWidgetProps) {
   return (
     <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       {open && (
-        <div className="glass-strong w-[min(360px,calc(100vw-2rem))] rounded-2xl shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-200">
+        <div className={`${opaque ? "bg-white" : "glass-strong"} w-[min(360px,calc(100vw-2rem))] rounded-2xl shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-200`}>
           <div className="flex items-center justify-between px-4 py-3 border-b border-white/20">
             <span className="text-sm font-semibold text-gray-700">Chat with my resume</span>
             <button
@@ -172,11 +173,11 @@ export default function ChatWidget({floating, ...props}: ChatWidgetProps) {
         </div>
       )}
 
-      <button
-        onClick={() => setOpen(prev => !prev)}
-        className="cursor-pointer w-14 h-14 rounded-full bg-emerald-600 text-white shadow-lg hover:shadow-xl hover:bg-emerald-700 transition-all duration-200 flex items-center justify-center"
-        aria-label={open ? "Close chat" : "Open chat"}
-      >
+        <button
+          onClick={() => setOpen(prev => !prev)}
+          className={`cursor-pointer w-14 h-14 rounded-full text-white shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center ${opaque ? "bg-emerald-700 hover:bg-emerald-800" : "bg-emerald-600 hover:bg-emerald-700"}`}
+          aria-label={open ? "Close chat" : "Open chat"}
+        >
         {open ? (
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />

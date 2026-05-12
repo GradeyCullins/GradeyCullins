@@ -27,7 +27,7 @@ export default function HeroBlock() {
             </div>
             
             <div>
-              <h1 className="text-4xl font-bold">Now Specializing In AI Integrations.</h1>
+              <h1 className="text-4xl font-bold">Now Specializing In AI Integrations</h1>
             </div>
 
             <div className="w-full max-w-lg my-8">
