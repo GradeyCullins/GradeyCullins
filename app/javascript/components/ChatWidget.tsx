@@ -9,11 +9,12 @@ interface ChatWidgetProps {
   agent: "website" | "resume"
   placeholder?: string
   greeting?: string
+  starterPrompts?: string[]
   floating?: boolean
   opaque?: boolean
 }
 
-function ChatPanel({agent, placeholder = "Ask me anything...", greeting}: Omit<ChatWidgetProps, "floating">) {
+function ChatPanel({agent, placeholder = "Ask me anything...", greeting, starterPrompts = []}: Omit<ChatWidgetProps, "floating">) {
   const [messages, setMessages] = useState<Message[]>(
     greeting ? [{role: "assistant", content: greeting}] : []
   )
@@ -37,9 +38,7 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting}: Omit<C
     return data.chat_id
   }
 
-  async function handleSubmit(e: FormEvent) {
-    e.preventDefault()
-    const content = input.trim()
+  async function sendMessage(content: string) {
     if (!content || loading) return
 
     setInput("")
@@ -73,6 +72,13 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting}: Omit<C
     }
   }
 
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault()
+    await sendMessage(input.trim())
+  }
+
+  const showStarterPrompts = starterPrompts.length > 0 && messages.filter(message => message.role === "user").length === 0
+
   return (
     <div className="rounded-2xl shadow-lg overflow-hidden flex flex-col w-full">
       {/* Messages area */}
@@ -98,6 +104,21 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting}: Omit<C
             </div>
           </div>
         ))}
+        {showStarterPrompts && (
+          <div className="space-y-2 pt-1">
+            {starterPrompts.map(prompt => (
+              <button
+                key={prompt}
+                type="button"
+                onClick={() => sendMessage(prompt)}
+                disabled={loading}
+                className="block w-full rounded-xl border border-emerald-200/80 bg-white/70 px-3 py-2 text-left text-sm leading-snug text-gray-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {prompt}
+              </button>
+            ))}
+          </div>
+        )}
         {loading && (
           <div className="flex justify-start">
             <div className="glass text-gray-400 px-3.5 py-2 rounded-2xl rounded-bl-md text-sm">

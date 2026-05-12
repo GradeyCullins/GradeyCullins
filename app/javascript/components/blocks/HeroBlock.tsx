@@ -35,6 +35,11 @@ export default function HeroBlock() {
                 agent="website"
                 placeholder="Ask about my services, experience, or how I can help..."
                 greeting="Hey! Try chatting with me..."
+                starterPrompts={[
+                  "What AI integrations can you build for my SaaS?",
+                  "How would you approach adding AI to an existing app?",
+                  "What kinds of projects are you best suited for?",
+                ]}
               />
             </div>
 

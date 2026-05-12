@@ -22,6 +22,11 @@ export default function CVPage({intro, roles, educations}: CVPageProps) {
         agent="resume"
         placeholder="Ask about my experience, skills, roles..."
         greeting="Hi! I can answer questions about Gradey's career, technical skills, and professional experience. What would you like to know?"
+        starterPrompts={[
+          "Summarize Gradey's strongest engineering experience.",
+          "What Rails and React work has Gradey done?",
+          "Is Gradey a good fit for AI product development?",
+        ]}
         floating
         opaque
       />
