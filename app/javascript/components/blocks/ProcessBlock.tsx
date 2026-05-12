@@ -36,7 +36,7 @@ export default function ProcessBlock() {
     <div className="py-20 sm:py-28">
       <ContentWrapper>
         <div className="max-w-3xl mb-14">
-          <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-3">
+          <p className="text-sm font-medium tracking-widest uppercase text-gray-500 mb-3">
             How It Works
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight mb-4">
@@ -51,13 +51,13 @@ export default function ProcessBlock() {
           {steps.map((item, index) => (
             <div key={item.step} className="relative glass rounded-xl p-6">
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 -right-3 w-6 border-t border-dashed border-blue-400/40 z-10" />
+                <div className="hidden lg:block absolute top-8 -right-3 w-6 border-t border-dashed border-gray-400/40 z-10" />
               )}
               <div className="mb-3">
-                <span className="glass-subtle inline-block px-2.5 py-1 rounded-md text-sm font-semibold text-blue-600">{item.step}</span>
+                <span className="glass-subtle inline-block px-2.5 py-1 rounded-md text-sm font-semibold text-gray-900">{item.step}</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h3>
-              <p className="text-sm text-blue-600 font-medium mb-3">{item.duration}</p>
+              <p className="text-sm text-gray-700 font-medium mb-3">{item.duration}</p>
               <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
             </div>
           ))}

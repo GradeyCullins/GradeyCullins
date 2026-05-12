@@ -4,7 +4,7 @@ import ContentWrapper from "./ContentWrapper.tsx";
 
 export default function HireMe() {
   return (
-    <WideBlockSection className="bg-amber-50">
+    <WideBlockSection className="bg-gray-100">
       <ContentWrapper>
         <h2>Hire Me Maybe?</h2>
         <div>I’m currently seeking new clients for web design, software development, and software engineering. I have a

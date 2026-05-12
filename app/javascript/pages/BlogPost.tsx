@@ -51,7 +51,7 @@ export default function BlogPost({ post }: BlogPostProps) {
         <pre {...props} className={cn("mt-6 overflow-x-auto rounded-2xl bg-slate-900 p-5 text-sm leading-6 text-slate-50 shadow-lg shadow-slate-900/20", className)} />
       ),
       a: ({ className, ...props }: any) => (
-        <a {...props} className={cn("text-indigo-600 underline decoration-2 underline-offset-4 transition-colors hover:text-indigo-500", className)} />
+        <a {...props} className={cn("text-gray-950 underline decoration-2 underline-offset-4 transition-colors hover:text-gray-700", className)} />
       )
     }
   }, [])
@@ -61,7 +61,7 @@ export default function BlogPost({ post }: BlogPostProps) {
       <Head title={post.title} />
       <WideBlockSection className="bg-slate-50">
         <ContentWrapper className="pr-4">
-          <Link href="/blog" className="w-fit items-center flex gap-2 text-blue-600 group text-sm">
+          <Link href="/blog" className="w-fit items-center flex gap-2 text-gray-950 group text-sm">
             <MoveLeft className="group-hover:translate-x-[-5px] transition-all" /> Back to Blog
           </Link>
           <p className="mt-4 text-sm uppercase text-slate-500">

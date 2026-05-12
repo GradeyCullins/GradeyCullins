@@ -34,7 +34,7 @@ export default function SocialProofBlock() {
     <div className="py-20 sm:py-28">
       <ContentWrapper>
         <div className="max-w-3xl mb-14">
-          <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-3">
+          <p className="text-sm font-medium tracking-widest uppercase text-gray-500 mb-3">
             Why Companies Hire Me
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight mb-4">
@@ -47,7 +47,7 @@ export default function SocialProofBlock() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {credibilityPoints.map((point) => (
-            <div key={point.label} className="glass rounded-xl p-5 border-t-2 border-t-blue-500/60">
+            <div key={point.label} className="glass rounded-xl p-5 border-t-2 border-t-gray-500/60">
               <p className="text-3xl font-semibold text-gray-900 mb-1">{point.metric}</p>
               <p className="text-sm font-medium text-gray-900 mb-1">{point.label}</p>
               <p className="text-sm text-gray-500">{point.detail}</p>

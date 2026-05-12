@@ -148,7 +148,7 @@ function renderInline(text: string): ReactNode[] {
           href={isSafeHref ? href : "#"}
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noreferrer" : undefined}
-          className="font-medium text-emerald-700 underline underline-offset-2"
+          className="font-medium text-gray-950 underline underline-offset-2"
         >
           {link?.[1] ?? href}
         </a>
@@ -192,7 +192,7 @@ export default function MarkdownMessage({content}: MarkdownMessageProps) {
           }
           case "quote":
             return (
-              <blockquote key={index} className="border-l-2 border-emerald-300 pl-3 text-gray-600">
+              <blockquote key={index} className="border-l-2 border-gray-400 pl-3 text-gray-600">
                 {renderInline(block.text)}
               </blockquote>
             )

@@ -97,8 +97,8 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting, starter
             <div
               className={`max-w-[80%] px-3.5 py-2 rounded-2xl text-sm leading-relaxed ${
                 msg.role === "user"
-                  ? "bg-emerald-600 text-white rounded-br-md"
-                  : "border border-emerald-200 bg-emerald-50/80 text-gray-700 rounded-bl-md shadow-sm"
+                  ? "bg-gray-950 text-white rounded-br-md"
+                  : "border border-gray-300 bg-gray-100 text-gray-800 rounded-bl-md shadow-sm"
               }`}
             >
               {msg.role === "assistant" ? <MarkdownMessage content={msg.content} /> : msg.content}
@@ -113,7 +113,7 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting, starter
                 type="button"
                 onClick={() => sendMessage(prompt)}
                 disabled={loading}
-                className="block w-full rounded-xl border border-emerald-200/80 bg-white/70 px-3 py-2 text-left text-sm leading-snug text-gray-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-50"
+                className="block w-full rounded-xl border border-gray-300 bg-white/70 px-3 py-2 text-left text-sm leading-snug text-gray-700 transition-colors hover:border-gray-500 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {prompt}
               </button>
@@ -148,12 +148,12 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting, starter
             onChange={e => setInput(e.target.value)}
             placeholder={placeholder}
             disabled={loading}
-            className="flex-1 bg-white/50 border border-white/40 rounded-full px-4 py-2 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500/30 disabled:opacity-50"
+            className="flex-1 bg-white/50 border border-white/40 rounded-full px-4 py-2 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400/40 focus:border-gray-500/60 disabled:opacity-50"
           />
           <button
             type="submit"
             disabled={loading || !input.trim()}
-            className="w-12 flex justify-center items-center cursor-pointer bg-emerald-600 text-white rounded-full p-2 hover:bg-emerald-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-12 flex justify-center items-center cursor-pointer bg-gray-950 text-white rounded-full p-2 hover:bg-gray-800 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
@@ -197,7 +197,7 @@ export default function ChatWidget({floating, opaque, ...props}: ChatWidgetProps
 
         <button
           onClick={() => setOpen(prev => !prev)}
-          className={`cursor-pointer w-14 h-14 rounded-full text-white shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center ${opaque ? "bg-emerald-700 hover:bg-emerald-800" : "bg-emerald-600 hover:bg-emerald-700"}`}
+          className="cursor-pointer w-14 h-14 rounded-full text-white shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center bg-gray-950 hover:bg-gray-800"
           aria-label={open ? "Close chat" : "Open chat"}
         >
         {open ? (

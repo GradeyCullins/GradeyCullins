@@ -1,6 +1,11 @@
 require "application_system_test_case"
 
 class HomeToContactNavigationTest < ApplicationSystemTestCase
+  setup do
+    ActionMailer::Base.deliveries.clear
+    SiteVisit.delete_all
+  end
+
   test "visiting the home page and navigating to contact form" do
     # Visit the home page
     visit root_path
@@ -20,23 +25,27 @@ class HomeToContactNavigationTest < ApplicationSystemTestCase
     # Verify specific form fields exist
     assert_field "Name"
     assert_field "Email"
-    assert_field "Message"
+    assert_field "Project type"
+    assert_field "What should we build?"
 
     contact_details = {
       name: "Jim Jones",
       email: "jimjones@example.com",
+      project_type: "AI product build",
       message: "this is my email message saaaar"
     }
 
     # Fill in the form
     fill_in "Name", with: contact_details[:name]
     fill_in "Email", with: contact_details[:email]
-    fill_in "Message", with: contact_details[:message]
+    select contact_details[:project_type], from: "Project type"
+    fill_in "What should we build?", with: contact_details[:message]
 
     # Check initial email count
     assert_difference "ActionMailer::Base.deliveries.size", +1 do
       # Submit the form
-      click_button "Send" # Adjust button text as needed
+      click_button "Send request"
+      assert_text "Thanks - your message has been sent."
     end
 
     # Assert we get redirected back to contact page (302 redirect)
@@ -45,13 +54,15 @@ class HomeToContactNavigationTest < ApplicationSystemTestCase
     # Assert form inputs are cleared after submission
     assert_field "Name", with: ""
     assert_field "Email", with: ""
-    assert_field "Message", with: ""
+    assert_field "Project type", with: ""
+    assert_field "What should we build?", with: ""
 
     # Verify the email was sent with correct details
     email = ActionMailer::Base.deliveries.last
 
     assert_equal ContactMailer.default[:from], email.from.first
     assert_includes email.body.to_s, contact_details[:message]
+    assert_includes email.body.to_s, contact_details[:project_type]
     assert_includes email.subject, contact_details[:name]
     assert_includes email.subject, contact_details[:email]
   end

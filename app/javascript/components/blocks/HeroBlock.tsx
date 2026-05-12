@@ -13,7 +13,7 @@ export default function HeroBlock() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] text-center py-20">
             
-            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden glass-strong shadow-xl shadow-blue-500/10 mb-5">
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden glass-strong shadow-xl shadow-gray-950/10 mb-5">
               
               <img
                 src={gradeyPixellated}

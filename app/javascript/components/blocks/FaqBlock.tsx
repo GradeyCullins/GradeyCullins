@@ -49,7 +49,7 @@ export default function FaqBlock() {
     <div className="py-20 sm:py-28">
       <ContentWrapper>
         <div className="max-w-3xl mb-10">
-          <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-3">
+          <p className="text-sm font-medium tracking-widest uppercase text-gray-500 mb-3">
             Common Questions
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">

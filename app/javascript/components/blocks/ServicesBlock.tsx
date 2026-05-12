@@ -68,7 +68,7 @@ export default function ServicesBlock() {
     <div className="py-20 sm:py-28">
       <ContentWrapper>
         <div className="max-w-3xl mb-14">
-          <p className="text-sm font-medium tracking-widest uppercase text-blue-600 mb-3">
+          <p className="text-sm font-medium tracking-widest uppercase text-gray-500 mb-3">
             What I Deliver
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight mb-4">
@@ -83,10 +83,10 @@ export default function ServicesBlock() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="glass rounded-xl p-8 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300"
+              className="glass rounded-xl p-8 hover:shadow-xl hover:shadow-gray-950/5 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/10 text-blue-600 backdrop-blur-sm">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-950/10 text-gray-950 backdrop-blur-sm">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
@@ -96,7 +96,7 @@ export default function ServicesBlock() {
                 {service.outcomes.map((outcome) => (
                   <li key={outcome} className="flex items-start text-sm text-gray-700">
                     <svg
-                      className="w-4 h-4 text-blue-600 mr-2 mt-0.5 shrink-0"
+                      className="w-4 h-4 text-gray-950 mr-2 mt-0.5 shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={2}

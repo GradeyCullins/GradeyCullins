@@ -4,7 +4,7 @@ import WideBlockSection from "./WideBlockSection.tsx";
 
 export default function AboutMe() {
   return (
-    <WideBlockSection className="bg-amber-50 border-t">
+    <WideBlockSection className="bg-gray-100 border-t">
       <ContentWrapper>
         <h1 className="text-3xl font-bold">Hello, I'm Gradey</h1>
         <div>

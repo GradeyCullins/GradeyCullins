@@ -45,12 +45,12 @@ export default function BlogPage({posts}: BlogProps) {
                     {post.status === "draft" && (
                       <>
                         <span>•</span>
-                        <span className="uppercase tracking-wide text-amber-500 font-semibold">Draft</span>
+                    <span className="uppercase tracking-wide text-gray-500 font-semibold">Draft</span>
                       </>
                     )}
                   </div>
                   <h2
-                    className="text-2xl font-semibold text-slate-900 group-hover:text-indigo-600 group-hover:underline">
+                    className="text-2xl font-semibold text-slate-900 group-hover:text-gray-950 group-hover:underline">
                     {post.title}
                   </h2>
                   <p className="text-slate-600 max-w-3xl">{post.excerpt}</p>
@@ -63,7 +63,7 @@ export default function BlogPage({posts}: BlogProps) {
                       ))}
                     </div>
                   )}
-                  <Link href={post.href} className="mt-4 py-1 w-fit group flex gap-2 text-blue-600">Read
+                  <Link href={post.href} className="mt-4 py-1 w-fit group flex gap-2 text-gray-950">Read
                     Now <MoveRight
                       className="transition-all group-hover:translate-x-1"/></Link>
                 </article>
