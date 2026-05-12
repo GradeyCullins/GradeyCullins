@@ -9,7 +9,7 @@ servers:
   web:
     proxy: false
     hosts:
-      - 10.0.0.199
+      - nas
     options:
       publish:
         - "9090:80"
@@ -54,8 +54,7 @@ asset_path: /rails/public/assets
 
 builder:
   arch: amd64
-  remote: ssh://gb@10.0.0.199:2222
+  remote: ssh://gb@nas
 
 ssh:
    user: gb
-   port: "2222"
