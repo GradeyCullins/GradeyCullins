@@ -16,6 +16,9 @@ class WebsiteAgentTest < ActiveSupport::TestCase
     assert_includes prompt, "B2B SaaS"
     assert_includes prompt, "LLM integrations"
     assert_includes prompt, "/contact"
+    assert_includes prompt, "/contact?lets_build=PROJECT_SUMMARY"
+    assert_includes prompt, "URL-encoded"
+    assert_includes prompt, "pre-fill the message field"
     assert_includes prompt, "do not invent specifics"
     assert_includes prompt, "2-4 sentences"
   end
