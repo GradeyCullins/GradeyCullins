@@ -1,4 +1,5 @@
 import {FormEvent, useRef, useState} from "react"
+import MarkdownMessage from "./MarkdownMessage.tsx"
 
 type Message = {
   role: "user" | "assistant"
@@ -77,7 +78,7 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting, starter
     await sendMessage(input.trim())
   }
 
-  const showStarterPrompts = starterPrompts.length > 0 && messages.filter(message => message.role === "user").length === 0
+  const showStarterPrompts = starterPrompts.length > 0
 
   return (
     <div className="rounded-2xl shadow-lg overflow-hidden flex flex-col w-full">
@@ -97,10 +98,10 @@ function ChatPanel({agent, placeholder = "Ask me anything...", greeting, starter
               className={`max-w-[80%] px-3.5 py-2 rounded-2xl text-sm leading-relaxed ${
                 msg.role === "user"
                   ? "bg-emerald-600 text-white rounded-br-md"
-                  : "glass text-gray-700 rounded-bl-md"
+                  : "border border-emerald-200 bg-emerald-50/80 text-gray-700 rounded-bl-md shadow-sm"
               }`}
             >
-              {msg.content}
+              {msg.role === "assistant" ? <MarkdownMessage content={msg.content} /> : msg.content}
             </div>
           </div>
         ))}

@@ -1,4 +1,5 @@
 require "test_helper"
+require "minitest/mock"
 
 class ChatsControllerTest < ActionDispatch::IntegrationTest
   test "message returns 429 when IP exceeds message limit" do
@@ -22,6 +23,9 @@ class ChatsControllerTest < ActionDispatch::IntegrationTest
 
   test "message is allowed when under the limit" do
     chat = Chat.create!(model_id: "claude-sonnet-4-20250514", ip_address: "127.0.0.1")
+    llm_response = Struct.new(:content).new("ok")
+    agent = Minitest::Mock.new
+    agent.expect(:ask, llm_response, [ "still ok" ])
 
     # Seed 19 user messages — one under the limit
     19.times do
@@ -29,12 +33,13 @@ class ChatsControllerTest < ActionDispatch::IntegrationTest
     end
 
     # This should NOT be rate limited (the 20th message is allowed through to the agent).
-    # We can't easily test the full agent response without mocking the LLM,
-    # so we just verify it doesn't return 429.
-    post "/api/chats/#{chat.id}/messages",
-         params: { content: "still ok", agent: "website" },
-         as: :json
+    WebsiteAgent.stub(:new, agent) do
+      post "/api/chats/#{chat.id}/messages",
+           params: { content: "still ok", agent: "website" },
+           as: :json
+    end
 
     assert_not_equal 429, response.status
+    agent.verify
   end
 end
