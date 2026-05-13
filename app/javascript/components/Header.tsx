@@ -17,7 +17,7 @@ function HeaderLink({children, href, active = false, onClick}: HeaderLinkProps) 
     <Link
       href={href}
       onClick={onClick}
-      className={`rounded-md border-b-2 px-2 py-1 text-sm font-black uppercase tracking-[0.18em] text-gray-950 transition-colors hover:border-gray-950 ${
+      className={`rounded-md border-2 px-2 py-1 text-sm font-bold uppercase tracking-[0.18em] text-gray-950 transition-colors hover:border-gray-950 ${
         active ? 'border-gray-950 bg-gray-950 text-white' : 'border-transparent'
       }`}
     >
@@ -97,7 +97,7 @@ export default function Header() {
         <HeaderLink href="/cv" active={isActive('/cv')}>CV</HeaderLink>
         <Link
           href="/contact"
-          className={`rounded-md border-2 border-gray-950 px-3 py-2 text-sm font-black uppercase tracking-[0.18em] transition-colors hover:bg-gray-950 hover:text-white ${
+          className={`rounded-md border-2 border-gray-950 px-3 py-2 text-sm font-bold uppercase tracking-[0.18em] transition-colors hover:bg-gray-950 hover:text-white ${
             isActive('/contact') ? 'bg-gray-950 text-white' : 'text-gray-950'
           }`}
         >
