@@ -1,5 +1,4 @@
 class ResumeAgent < RubyLLM::Agent
-  model "claude-sonnet-4-20250514"
+  model LlmConfig::OPENAI_MODEL, provider: :openai, assume_model_exists: true
   instructions
-  temperature 0.4
 end

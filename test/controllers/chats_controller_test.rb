@@ -4,7 +4,11 @@ require "minitest/mock"
 class ChatsControllerTest < ActionDispatch::IntegrationTest
   test "message returns 429 when IP exceeds message limit" do
     # Test requests come from 127.0.0.1
-    chat = Chat.create!(model_id: "claude-sonnet-4-20250514", ip_address: "127.0.0.1")
+    chat = Chat.create!(
+      model: LlmConfig::OPENAI_MODEL,
+      provider: :openai,
+      ip_address: "127.0.0.1"
+    )
 
     # Seed 20 user messages directly in the DB to hit the limit
     20.times do
@@ -22,7 +26,11 @@ class ChatsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "message is allowed when under the limit" do
-    chat = Chat.create!(model_id: "claude-sonnet-4-20250514", ip_address: "127.0.0.1")
+    chat = Chat.create!(
+      model: LlmConfig::OPENAI_MODEL,
+      provider: :openai,
+      ip_address: "127.0.0.1"
+    )
     llm_response = Struct.new(:content).new("ok")
     agent = Minitest::Mock.new
     agent.expect(:ask, llm_response, [ "still ok" ])

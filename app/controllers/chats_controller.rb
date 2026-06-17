@@ -12,7 +12,11 @@ class ChatsController < ApplicationController
     agent_class = AGENTS[params[:agent]]
     return render json: { error: "Unknown agent" }, status: :unprocessable_entity unless agent_class
 
-    chat = Chat.create!(model_id: "claude-sonnet-4-20250514", ip_address: request.remote_ip)
+    chat = Chat.create!(
+      model: LlmConfig::OPENAI_MODEL,
+      provider: :openai,
+      ip_address: request.remote_ip
+    )
     agent = agent_class.new(chat: chat.to_llm)
 
     render json: { chat_id: chat.id }

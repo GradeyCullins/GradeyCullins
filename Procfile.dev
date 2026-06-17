@@ -1,4 +1,4 @@
-web: bin/rails server
-css: bin/rails tailwindcss:watch
+web: bin/rails server -b 0.0.0.0
+css: bin/rails tailwindcss:watch[always,poll]
 vite: bin/vite dev
-mail: mailpit
+mail: sh -c 'if command -v mailpit >/dev/null 2>&1; then exec mailpit; else echo "mailpit is not installed; skipping local mail inbox"; exec tail -f /dev/null; fi'
