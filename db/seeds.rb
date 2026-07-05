@@ -108,7 +108,7 @@ puts "Seeded #{BlogPost.count} blog posts with tags."
 puts "Seeding CV intro..."
 cv_intro = CvIntro.first_or_initialize
 cv_intro.assign_attributes(
-  summary: "Senior full stack developer with experience in healthcare, finance, and B2B enterprise software.",
+  summary: "Senior full-stack developer experienced in building and modernizing software for healthcare, finance, and B2B enterprises. Focused on reliable systems, scalable product development, and practical technical leadership. Interested in leadership roles across fintech, healthcare technology, and other cutting-edge industries.",
   linkedin_url: "https://www.linkedin.com/in/gradey-cullins-738b2045/",
   github_url: "https://github.com/GradeyCullins",
   email: "gradeycullins@gmail.com"
