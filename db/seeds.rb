@@ -118,7 +118,7 @@ cv_intro.save!
 puts "Seeding CV roles..."
 cv_roles = [
   {
-    title: "Software Developer II",
+    title: "Software Developer III",
     company: "TruHearing",
     company_url: "https://truhearing.com",
     description: "Building an enterprise healthcare app with React, Ruby on Rails, Postgres, and AWS.",

@@ -1,4 +1,3 @@
-import WideBlockSection from "./WideBlockSection.tsx";
 import {CvIntro, CvRole, CvEducation} from "../types.ts";
 import LinkedInIcon from "/assets/icons/linked-in.svg"
 import GitHubIcon from "/assets/icons/github.svg"
@@ -12,38 +11,46 @@ interface CVBlockProps {
 
 export default function CVBlock({intro, roles, educations}: CVBlockProps) {
   return (
-    <WideBlockSection>
-      <div className="w-full px-4 sm:px-5 lg:px-8">
-        <div className="mb-6 flex flex-col gap-4 pr-4 sm:flex-row sm:items-center sm:justify-between sm:pr-0">
-          <h1 className="font-bold text-3xl sm:text-4xl">Curriculum Vitae</h1>
-          <a
-            href="/cv/download"
-            className="inline-flex w-full items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gray-950 rounded-full hover:bg-gray-800 transition-all duration-200 shadow-sm sm:w-auto"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-            </svg>
-            Download PDF
-          </a>
-        </div>
-
-        <hr className="mb-6" />
-
-        <div className="rounded-md pr-4 sm:pr-0">
+    <section className="w-full">
+      <article className="cv-document border border-gray-200 bg-white px-5 py-7 shadow-2xl shadow-gray-950/10 sm:px-8 sm:py-10 md:px-12 lg:px-14">
+        <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-gray-500">Resume</p>
+            <h1 className="mt-2 text-3xl font-black leading-none tracking-normal text-gray-950 sm:text-4xl">Gradey Cullins</h1>
+            <p className="mt-2 text-base font-bold text-gray-600">Senior Software Engineer</p>
+          </div>
           {intro && (
-            <div className="mb-6 flex flex-wrap items-center gap-3">
-              <a href={intro.linkedinUrl} target="_blank" rel="noreferrer" title="LinkedIn">
-                <img src={LinkedInIcon} alt="LinkedIn" className="w-5 h-5 opacity-60 hover:opacity-100 transition-opacity" />
+            <div className="flex items-center gap-2 sm:pt-2">
+              <a
+                href={intro.linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+                title="LinkedIn"
+                className="flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-gray-950 hover:shadow-lg hover:shadow-gray-950/10"
+              >
+                <img src={LinkedInIcon} alt="LinkedIn" className="h-5 w-5 opacity-70 transition-opacity hover:opacity-100" />
               </a>
-              <a href={intro.githubUrl} target="_blank" rel="noreferrer" title="GitHub">
-                <img src={GitHubIcon} alt="GitHub" className="w-5 h-5 opacity-60 hover:opacity-100 transition-opacity" />
+              <a
+                href={intro.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                title="GitHub"
+                className="flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-gray-950 hover:shadow-lg hover:shadow-gray-950/10"
+              >
+                <img src={GitHubIcon} alt="GitHub" className="h-5 w-5 opacity-70 transition-opacity hover:opacity-100" />
               </a>
-              <a href={`mailto:${intro.email}`} title={intro.email}>
-                <img src={GmailIcon} alt="Email" className="w-5 h-5 opacity-60 hover:opacity-100 transition-opacity" />
+              <a
+                href={`mailto:${intro.email}`}
+                title={intro.email}
+                className="flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-gray-950 hover:shadow-lg hover:shadow-gray-950/10"
+              >
+                <img src={GmailIcon} alt="Email" className="h-5 w-5 opacity-70 transition-opacity hover:opacity-100" />
               </a>
             </div>
           )}
+        </div>
 
+        <div>
           {intro && (
             <>
               <h2>About</h2>
@@ -89,7 +96,6 @@ export default function CVBlock({intro, roles, educations}: CVBlockProps) {
 
           {educations.length > 0 && (
             <>
-              <hr className="my-2" />
               <h2>Education</h2>
               {educations.map((edu) => (
                 <div key={edu.id} className="about-section">
@@ -108,7 +114,7 @@ export default function CVBlock({intro, roles, educations}: CVBlockProps) {
             </>
           )}
         </div>
-      </div>
-    </WideBlockSection>
+      </article>
+    </section>
   )
 }

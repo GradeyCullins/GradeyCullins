@@ -1,29 +1,33 @@
 @reference "../../entrypoints/application.css";
 
-h2 {
-  @apply text-2xl sm:text-3xl font-bold mb-4;
+.cv-document h2 {
+  @apply mb-3 text-base font-black uppercase tracking-[0.16em] text-gray-950;
 }
 
-.about-section {
-  @apply flex flex-col-reverse gap-2 mb-5 sm:flex-wrap-reverse sm:flex-row sm:justify-between;
+.cv-document .about-section {
+  @apply mb-5 grid gap-2 sm:grid-cols-[minmax(0,1fr)_9rem] sm:gap-6;
 
   h3 {
-    @apply text-lg sm:text-xl font-semibold mb-2;
+    @apply mb-2 text-base font-black leading-snug text-gray-950 sm:text-lg;
   }
 
   div:first-of-type {
-    @apply w-full md:w-3/4;
+    @apply min-w-0;
   }
 
   p.when {
-    @apply text-sm sm:text-base text-slate-500;
+    @apply text-sm font-bold leading-snug text-gray-500 sm:text-right;
   }
 
   p {
-    @apply mb-2 text-base leading-7;
+    @apply mb-2 text-[0.95rem] leading-6 text-gray-700;
   }
 
   ul {
-    @apply list-disc list-inside space-y-1;
+    @apply list-disc space-y-1 pl-5 text-[0.95rem] leading-6 text-gray-700;
   }
+}
+
+.cv-document .about-section + h2 {
+  @apply mt-7;
 }

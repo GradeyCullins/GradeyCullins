@@ -17,7 +17,7 @@ function HeaderLink({children, href, active = false, onClick}: HeaderLinkProps) 
     <Link
       href={href}
       onClick={onClick}
-      className={`rounded-md border-2 px-2 py-1 text-sm font-bold uppercase tracking-[0.18em] text-gray-950 transition-colors hover:border-gray-950 ${
+      className={`rounded-sm border-2 px-2 py-1 text-sm font-bold uppercase tracking-[0.18em] text-gray-950 transition-colors hover:border-gray-950 ${
         active ? 'border-gray-950 bg-gray-950 text-white' : 'border-transparent'
       }`}
     >
@@ -31,7 +31,7 @@ function MobileHeaderLink({children, href, active = false, onClick}: HeaderLinkP
     <Link
       href={href}
       onClick={onClick}
-      className={`block rounded-md border-b-4 border-gray-950 px-3 pb-2 text-right text-5xl font-black uppercase leading-none tracking-normal transition-colors hover:text-gray-600 sm:text-6xl ${
+      className={`block rounded-sm border-b-4 border-gray-950 px-3 pb-2 text-right text-5xl font-black uppercase leading-none tracking-normal transition-colors hover:text-gray-600 sm:text-6xl ${
         active ? 'bg-gray-950 text-white' : 'text-gray-950'
       }`}
     >
@@ -44,7 +44,7 @@ function SocialLink({href, icon, alt}: {href: string, icon: string, alt: string}
   return (
     <a
       href={href}
-      className="flex h-10 w-10 items-center justify-center rounded-md border-2 border-transparent transition-colors hover:border-gray-950"
+      className="flex h-10 w-10 items-center justify-center rounded-sm border-2 border-transparent transition-colors hover:border-gray-950"
     >
       <img src={icon} width={18} height={18} alt={alt} className="opacity-80 transition-opacity hover:opacity-100"/>
     </a>
@@ -69,7 +69,7 @@ export default function Header() {
     <header className="absolute inset-x-0 top-0 z-50 pointer-events-none">
       <Link href="/" className="group pointer-events-auto absolute left-3 top-3 z-20 sm:left-5 sm:top-5">
         <div className="flex items-start gap-3">
-          <div className="h-11 w-11 shrink-0 overflow-hidden rounded-md bg-white transition-transform group-hover:-rotate-3">
+          <div className="h-11 w-11 shrink-0 overflow-hidden rounded-sm bg-white transition-transform group-hover:-rotate-3">
             <img
               src="/icon.svg"
               alt="GC Logo"
@@ -97,11 +97,11 @@ export default function Header() {
         <HeaderLink href="/cv" active={isActive('/cv')}>CV</HeaderLink>
         <Link
           href="/contact"
-          className={`rounded-md border-2 border-gray-950 px-3 py-2 text-sm font-bold uppercase tracking-[0.18em] transition-colors hover:bg-gray-950 hover:text-white ${
+          className={`rounded-sm border-2 border-gray-950 px-3 py-2 text-sm font-bold uppercase tracking-[0.18em] transition-colors hover:bg-gray-950 hover:text-white ${
             isActive('/contact') ? 'bg-gray-950 text-white' : 'text-gray-950'
           }`}
         >
-          Contact
+          Work With Me
         </Link>
         <div className="flex items-center gap-1">
           <SocialLink
@@ -124,7 +124,7 @@ export default function Header() {
 
       <button
         onClick={toggleMenu}
-        className="pointer-events-auto absolute right-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-md border-2 border-gray-950 bg-gray-50 text-gray-950 md:hidden"
+        className="pointer-events-auto absolute right-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-sm border-2 border-gray-950 bg-gray-50 text-gray-950 md:hidden"
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMenuOpen}
       >
