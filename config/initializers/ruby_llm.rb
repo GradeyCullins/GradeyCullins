@@ -7,5 +7,5 @@ RubyLLM.configure do |config|
                            Rails.application.credentials.dig(:openai_api_key) ||
                            Rails.application.credentials.dig(:OPENAI_API_KEY)
   config.default_model = LlmConfig::OPENAI_MODEL
-  config.model_registry_file = Rails.root.join("config/ruby_llm_models.json")
+  # config.model_registry_file = Rails.root.join("config/ruby_llm_models.json")
 end
